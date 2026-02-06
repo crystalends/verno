@@ -16,8 +16,8 @@ export default function CompletedProjects() {
     useCarouselControls();
 
   return (
-    <div className="rounded-[40px] py-10 bg-[url('/e536e83e11e005a17b38c90a3c9ee27019bdc820.webp')] bg-center bg-cover mb-20">
-      <div className="w-full max-w-[1540px] mx-auto px-5">
+    <div className="lg:rounded-[40px] py-3.75 lg:py-10 bg-[url('/e536e83e11e005a17b38c90a3c9ee27019bdc820.webp')] bg-center bg-cover mb-20">
+      <div className="w-full max-w-385 mx-auto px-3.75 xl:px-5">
         <div className="bg-background rounded-[20px] flex flex-col max-w-220 gap-10 p-10">
           <div className="flex justify-between flex-wrap sm:flex-nowrap items-center gap-2.5">
             <h2 className="font-medium text-[32px]">Реализованные проекты</h2>

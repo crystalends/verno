@@ -117,7 +117,7 @@ export default function MediaViewer({
       {triggerSlot && <DialogTrigger asChild>{triggerSlot}</DialogTrigger>}
 
       <DialogPortal>
-        <DialogOverlay className="backdrop-blur-[20px] bg-black/60 z-100" />
+        <DialogOverlay className="backdrop-blur-[20px] bg-[#656361CC] z-100" />
         <DialogPrimitive.Content className="fixed inset-0 z-101 flex items-center justify-center outline-none overflow-hidden">
           <DialogPrimitive.Close
             onClick={handleClose}
@@ -142,7 +142,7 @@ export default function MediaViewer({
                 return (
                   <CarouselItem
                     key={index}
-                    className="pl-4 md:pl-10 basis-[85%] md:basis-[75%] lg:basis-[70%] flex items-center justify-center"
+                    className="basis-9/10 lg:basis-3/5 flex items-center justify-center"
                   >
                     <div
                       className={`relative w-full flex items-center justify-center transition-all duration-500 ease-out ${

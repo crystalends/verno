@@ -5,7 +5,7 @@ import { Checkbox } from "@/app/_components/ui/checkbox";
 import { Field } from "@/app/_components/ui/field";
 import { Input } from "@/app/_components/ui/input";
 import { Label } from "@/app/_components/ui/label";
-import Select from "@/app/_components/ui/select";
+import ReactSelect from "@/app/_components/ui/react-select";
 import { Textarea } from "@/app/_components/ui/textarea";
 
 export default function OrderDesignProjectForm() {
@@ -16,7 +16,7 @@ export default function OrderDesignProjectForm() {
           <Input placeholder="Имя" />
           <Input placeholder="Телефон" />
         </div>
-        <Select placeholder="Адрес магазина" />
+        <ReactSelect placeholder="Адрес магазина" />
         <Textarea placeholder="Ваше сообщение" />
       </div>
       <Field orientation="horizontal">

@@ -79,8 +79,8 @@ export default function Facts() {
           />
         ))}
         <div className="border-primary flex flex-col justify-end border rounded-[20px] p-2.5 min-h-59.75">
-          <div className="flex flex-col gap-2.5">
-            <h5 className="font-medium text-[18px]">
+          <div className="flex flex-col gap-5">
+            <h5 className="font-medium text-[18px] leading-5.5">
               Эксперты «Verno» рассказывают, как выбрать планировку
               под ваши задачи
             </h5>

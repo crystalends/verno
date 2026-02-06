@@ -11,6 +11,7 @@ import {
 import { Button } from "@/app/_components/ui/button";
 import OrderDesignProject from "@/app/_components/DesignProject/OrderDesignProject";
 import { VisuallyHidden } from "radix-ui";
+import Footer from "@/app/_components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -43,6 +44,7 @@ export default function RootLayout({
           }
         />
         <main className="pt-21 lg:pt-30">{children}</main>
+        <Footer />
       </body>
     </html>
   );

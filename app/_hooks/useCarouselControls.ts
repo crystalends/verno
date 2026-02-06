@@ -1,10 +1,10 @@
 import { CarouselApi } from "@/app/_components/ui/carousel";
 import { useCallback, useEffect, useState } from "react";
 
-export function useCarouselControls(
+export const useCarouselControls = (
   initialIndex?: number | null,
   onIndexChange?: (index: number) => void,
-) {
+) => {
   const [api, setApi] = useState<CarouselApi>();
   const [activeIndex, setActiveIndex] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -35,6 +35,9 @@ export function useCarouselControls(
   useEffect(() => {
     if (!api) return;
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    updateStates(api);
+
     const handler = () => onSelect(api);
     api.on("select", handler);
     api.on("reInit", handler);
@@ -43,7 +46,7 @@ export function useCarouselControls(
       api.off("select", handler);
       api.off("reInit", handler);
     };
-  }, [api, onSelect]);
+  }, [api, onSelect, updateStates]);
 
   useEffect(() => {
     if (!api || typeof initialIndex !== "number") return;
@@ -63,4 +66,4 @@ export function useCarouselControls(
     canScrollPrev,
     canScrollNext,
   };
-}
+};

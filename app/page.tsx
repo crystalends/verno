@@ -5,6 +5,7 @@ import CompletedProjects from "@/app/_components/Home/CompletedProjects/Complete
 import Facts from "@/app/_components/Home/Facts/Facts";
 import CornersHouse from "@/app/_components/Home/HouseCorners";
 import HowOrder from "@/app/_components/Home/HowOrder/HowOrder";
+import OurShowrooms from "@/app/_components/Home/OurShowrooms/OurShowrooms";
 import Reviews from "@/app/_components/Home/Reviews/Reviews";
 import SpecialOffer from "@/app/_components/Home/SpecialOffer";
 import { Button } from "@/app/_components/ui/button";
@@ -80,7 +81,7 @@ export default async function Home() {
           <About />
         </div>
       </div>
-      <div className="flex flex-col gap-20"></div>
+      <OurShowrooms />
     </>
   );
 }

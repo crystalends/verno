@@ -56,7 +56,7 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
         backdropFilter: blurValue,
         WebkitBackdropFilter: blurValue,
       }}
-      className="fixed top-0 left-0 pb-2.5 right-0 z-50 border-b border-transparent transition-colors duration-300"
+      className="fixed top-0 left-0 pb-2.5 right-0 z-50 transition-colors duration-300"
     >
       <div className="wrapper-narrow">
         <motion.div layout className="flex justify-between items-start gap-5">
