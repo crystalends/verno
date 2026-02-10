@@ -16,6 +16,7 @@ import ProductCard from "@/app/_components/shared/ProductCard";
 import { Badge } from "@/app/_components/ui/badge";
 import Breadcrumbs, { TBreadcrumb } from "@/app/_components/ui/breadcrumbs";
 import { Button } from "@/app/_components/ui/button";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function KitchensPage() {
@@ -104,8 +105,13 @@ export default function KitchensPage() {
                     key={index}
                     imageProps={{
                       src: "/e536e83e11e005a17b38c90a3c9ee27019bdc820.webp",
+                      alt: "Кухонный гарнитур Джулия",
                     }}
-                    name="Кухонный гарнитур Джулия"
+                    name={
+                      <Link href={`/kitchens/kitchen-${index + 1}`}>
+                        Кухонный гарнитур Джулия
+                      </Link>
+                    }
                     description="Эмаль"
                     topContent={
                       <div className="absolute top-2.5 left-2.5 right-2.5">

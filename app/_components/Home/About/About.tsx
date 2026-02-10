@@ -1,8 +1,9 @@
 "use client";
 
-import MediaPreview from "@/app/_components/shared/MediaPreview";
-import MediaViewer from "@/app/_components/shared/MediaViewer/MediaViewer";
+import MediaViewer from "@/app/_components/shared/Media/MediaViewer";
 import { useState } from "react";
+import { TMediaFile } from "@/app/_types/TMediaFile";
+import MediaPreview from "@/app/_components/shared/Media/MediaPreview";
 
 type TInfo = {
   count: string;
@@ -17,20 +18,6 @@ const HEIGHT_CONFIG = [
   "lg:h-[156px]",
   "lg:h-[270px]",
 ];
-
-export type TMediaFile =
-  | {
-      url: string;
-      alt: string;
-      type: "image";
-      previewUrl?: never;
-    }
-  | {
-      url: string;
-      alt?: never;
-      type: "video";
-      previewUrl: string;
-    };
 
 export default function About() {
   const info: TInfo[] = [

@@ -19,7 +19,7 @@ import { useCarouselControls } from "@/app/_hooks/useCarouselControls";
 import { useEffect } from "react";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { VariantProps } from "class-variance-authority";
-import MediaViewerSlideControl from "@/app/_components/shared/MediaViewer/MediaViewerSlideControl";
+import MediaViewerSlideControl from "@/app/_components/shared/Media/MediaViewerSlideControl";
 import { VisuallyHidden } from "radix-ui";
 
 export type TMediaViewerFile = {

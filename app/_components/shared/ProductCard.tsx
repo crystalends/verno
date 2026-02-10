@@ -1,11 +1,11 @@
 import Image, { ImageProps } from "next/image";
 
 type TProductCardProps = {
-  name: string;
+  name: React.ReactNode;
   description?: string;
   topContent?: React.ReactNode;
   bottomContent?: React.ReactNode;
-  imageProps?: Omit<ImageProps, "width" | "height" | "fill" | "alt">;
+  imageProps?: Omit<ImageProps, "width" | "height" | "fill">;
 };
 
 export default function ProductCard({
@@ -23,7 +23,6 @@ export default function ProductCard({
           className="rounded-[20px] h-90 w-full object-cover"
           width={460}
           height={360}
-          alt={name}
           {...imageProps}
         />
       )}
