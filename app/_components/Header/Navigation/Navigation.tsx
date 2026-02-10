@@ -129,7 +129,9 @@ export default function Navigation() {
           <NavigationMenuItem key={title}>
             {contentData ? (
               <>
-                <NavigationMenuTrigger>{title}</NavigationMenuTrigger>
+                <NavigationMenuTrigger>
+                  <Link href={href}>{title}</Link>
+                </NavigationMenuTrigger>
                 <NavigationMenuContent
                   style={{
                     width: contentData.width,

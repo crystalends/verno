@@ -3,7 +3,7 @@ import Image, { ImageProps } from "next/image";
 type TCompletedProjectProps = {
   title: string;
   date?: string;
-  imageProps?: Omit<ImageProps, "width" | "height" | "alt">;
+  imageProps?: Omit<ImageProps, "width" | "height" | "alt" | "fill">;
 };
 
 export default function CompletedProject({

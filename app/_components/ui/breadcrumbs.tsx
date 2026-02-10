@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 export type TBreadcrumb = {
   value: string;
@@ -16,14 +17,14 @@ export default function Breadcrumbs({ breadcrumbs }: TBreadcrumbsProps) {
     <div className="flex gap-0.5 flex-wrap">
       {breadcrumbs.map(({ value, href }, index) => {
         const children = (
-          <>
+          <React.Fragment key={index}>
             {index > 0 ? (
               "/ "
             ) : (
               <Image src="/Up 1.svg" width={13} height={13} alt={value} />
             )}
             {value}
-          </>
+          </React.Fragment>
         );
 
         const className = clsx(

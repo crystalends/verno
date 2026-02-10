@@ -4,7 +4,7 @@ import Image, { ImageProps } from "next/image";
 export type THowOrderCardProps = {
   title: string;
   description: string;
-  imageProps?: Omit<ImageProps, "width" | "height" | "alt">;
+  imageProps?: Omit<ImageProps, "width" | "height" | "alt" | "fill">;
   counterValue?: string;
 };
 

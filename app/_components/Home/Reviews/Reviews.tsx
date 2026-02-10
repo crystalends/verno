@@ -27,7 +27,7 @@ export default function Reviews() {
               />
             ))}
         </div>
-        <div className="flex gap-2.5 justify-end">
+        <div className="flex gap-2.5 flex-wrap justify-end">
           <Button
             size="sm"
             variant="outline"

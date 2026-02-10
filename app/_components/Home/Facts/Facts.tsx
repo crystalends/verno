@@ -69,7 +69,7 @@ export default function Facts() {
 
   return (
     <Block title="ПочемуVERNO — это не просто мебель">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 xl:grid-cols-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 xl:grid-cols-6">
         {facts.map((fact, index) => (
           <Fact
             key={index}
@@ -78,7 +78,7 @@ export default function Facts() {
             description={fact.description}
           />
         ))}
-        <div className="border-primary flex flex-col justify-end border rounded-[20px] p-2.5 min-h-59.75">
+        <div className="border-primary flex flex-col justify-end border rounded-[20px] p-5 sm:p-2.5 sm:min-h-59.75">
           <div className="flex flex-col gap-5">
             <h5 className="font-medium text-[18px] leading-5.5">
               Эксперты «Verno» рассказывают, как выбрать планировку

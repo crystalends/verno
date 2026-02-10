@@ -6,7 +6,7 @@ export type TFactProps = {
 
 export default function Fact({ title, description, iconSlot }: TFactProps) {
   return (
-    <div className="flex flex-col gap-2 bg-[#F3EAE3] rounded-[20px] p-5 justify-between min-h-59.75">
+    <div className="flex flex-col gap-10 bg-[#F3EAE3] rounded-[20px] p-5 justify-between sm:min-h-59.75">
       {iconSlot && (
         <div className="bg-primary flex justify-center items-center rounded-full size-13.75 overflow-hidden">
           {iconSlot}

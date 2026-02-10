@@ -10,6 +10,7 @@ import { useMediaQuery } from "react-responsive";
 import Favorites from "@/app/_components/Header/Favorites";
 import { useIsScrolled } from "@/app/_hooks/useIsScrolled";
 import clsx from "clsx";
+import Link from "next/link";
 
 type THeaderProps = {
   orderDesignProjectModalSlot: React.ReactNode;
@@ -65,13 +66,15 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
             style={{ width: logoWidth, height: logoHeight }}
             className="relative shrink-0"
           >
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              fill
-              className="object-contain"
-              priority
-            />
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </Link>
           </motion.div>
 
           <div className="hidden lg:flex flex-col items-end w-full gap-2.5">

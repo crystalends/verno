@@ -19,7 +19,7 @@ export default function OurShowroom({
       <div className="flex flex-col gap-10">
         <h5 className="text-[18px] font-medium">{name}</h5>
         <div className="flex flex-col gap-2.5">
-          <p className="font-circe text-[16px] leading-[19px]">{address}</p>
+          <p className="font-circe text-[16px] leading-4.75">{address}</p>
           <span className="font-circe text-[16px]">{workingHours}</span>
         </div>
       </div>
