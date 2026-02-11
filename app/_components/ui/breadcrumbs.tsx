@@ -33,7 +33,7 @@ export default function Breadcrumbs({ breadcrumbs }: TBreadcrumbsProps) {
         );
 
         return (
-          <>
+          <React.Fragment key={index}>
             {href ? (
               <Link className={className} href={href}>
                 {children}
@@ -41,7 +41,7 @@ export default function Breadcrumbs({ breadcrumbs }: TBreadcrumbsProps) {
             ) : (
               <span className={className}>{children}</span>
             )}
-          </>
+          </React.Fragment>
         );
       })}
     </div>

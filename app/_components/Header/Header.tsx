@@ -7,10 +7,10 @@ import { motion, useTransform } from "framer-motion";
 import { useSmartHeader } from "@/app/_hooks/Header/useSmartHeader";
 import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
-import Favorites from "@/app/_components/Header/Favorites";
 import { useIsScrolled } from "@/app/_hooks/useIsScrolled";
 import clsx from "clsx";
 import Link from "next/link";
+import FavoriteButton from "@/app/_components/FavoriteButton";
 
 type THeaderProps = {
   orderDesignProjectModalSlot: React.ReactNode;
@@ -107,7 +107,7 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
               <Button size="icon" variant="ghost" className="size-6 min-h-fit">
                 <Image src="/Vector.svg" alt="Search" width={16} height={16} />
               </Button>
-              <Favorites />
+              <FavoriteButton />
               {orderDesignProjectModalSlot}
             </motion.div>
 
@@ -119,7 +119,7 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
               )}
             >
               <Navigation />
-              {isScrolled && <Favorites />}
+              {isScrolled && <FavoriteButton />}
             </motion.div>
           </div>
         </motion.div>

@@ -6,7 +6,7 @@ import Facts from "@/app/_components/Home/Facts/Facts";
 import CornersHouse from "@/app/_components/Home/HouseCorners";
 import HowOrder from "@/app/_components/Home/HowOrder/HowOrder";
 import OurShowrooms from "@/app/_components/Home/OurShowrooms/OurShowrooms";
-import Reviews from "@/app/_components/Home/Reviews/Reviews";
+import Reviews from "@/app/_components/Reviews/Reviews";
 import SpecialOffer from "@/app/_components/Home/SpecialOffer";
 import { Button } from "@/app/_components/ui/button";
 import Image from "next/image";

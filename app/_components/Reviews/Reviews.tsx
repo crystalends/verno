@@ -1,5 +1,5 @@
 import Block from "@/app/_components/Home/Block";
-import Review from "@/app/_components/Home/Reviews/Review";
+import Review from "@/app/_components/Reviews/Review";
 import { Button } from "@/app/_components/ui/button";
 
 export default function Reviews() {

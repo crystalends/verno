@@ -105,10 +105,10 @@ export default function MediaViewer({
 
   const {
     leftSlot: controlLeftSlot = (
-      <ChevronLeft className="h-4 w-4 text-[#FFFFFF66] transition-colors group-hover:text-foreground" />
+      <ChevronLeft className="text-[#FFFFFF66] transition-colors group-hover:text-foreground" />
     ),
     rightSlot: controlRightSlot = (
-      <ChevronRight className="h-4 w-4 text-[#FFFFFF66] transition-colors group-hover:text-foreground" />
+      <ChevronRight className="text-[#FFFFFF66] transition-colors group-hover:text-foreground" />
     ),
   } = controls || {};
 
