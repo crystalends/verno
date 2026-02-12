@@ -69,7 +69,7 @@ export default function Navigation() {
         </div>
       ),
     },
-    "/promotions": {
+    "/stocks": {
       width: openSales ? 383 : 214,
       value: <Promotions openSales={openSales} setOpenSales={setOpenSales} />,
     },

@@ -19,6 +19,8 @@ export default function ReactSelect<T>(props: SelectProps<T>) {
       fontFamily: "var(--font-circe), sans-serif",
       backgroundColor: "transparent",
       minHeight: "49px",
+      height: "100%",
+      width: "100%",
       borderRadius: 0,
       border: "none",
       borderBottom: state.isFocused
@@ -32,7 +34,7 @@ export default function ReactSelect<T>(props: SelectProps<T>) {
     }),
     valueContainer: (base) => ({
       ...base,
-      padding: "0px 10px",
+      padding: "0px 5px",
     }),
     input: (base) => ({
       ...base,
@@ -44,6 +46,7 @@ export default function ReactSelect<T>(props: SelectProps<T>) {
       ...base,
       color: "var(--muted-foreground)",
       fontSize: "inherit",
+      textAlign: "left",
     }),
     indicatorSeparator: () => ({
       display: "none",

@@ -24,6 +24,8 @@ type TProductMediaCarouselProps = {
 
   useControls?: boolean;
 
+  onClick?: (index: number, mediaFile: TMediaViewerFile) => void;
+
   controls?: {
     props?: Omit<
       React.ComponentProps<"button">,
@@ -39,6 +41,7 @@ export default function ProductMediaCarousel({
   active,
   useControls = true,
   controls,
+  onClick,
 }: TProductMediaCarouselProps) {
   const setExternalIndex = active?.setIndex;
 
@@ -100,24 +103,28 @@ export default function ProductMediaCarousel({
     <Carousel
       setApi={setApi}
       opts={{ align: "center", loop: false, containScroll: false }}
-      className="w-full"
+      className="w-full h-full min-h-0"
     >
-      <CarouselContent>
-        {mediaFiles.map(({ url, alt, type }, index) => {
+      <CarouselContent className="h-full min-h-0 items-stretch">
+        {mediaFiles.map((mediaFile, index) => {
+          const { url, alt, type } = mediaFile;
           const isActive = index === activeIndex;
 
           return (
             <CarouselItem
               key={index}
-              className="basis-full flex items-center justify-center"
+              className="basis-full h-full min-h-0 flex items-stretch justify-center"
             >
-              <div className="relative w-full flex items-center justify-center transition-all duration-500 ease-out">
-                <div className="relative w-full h-162.5 overflow-hidden rounded-[20px]">
+              <div className="relative w-full h-full min-h-0">
+                <div
+                  onClick={() => onClick && onClick(index, mediaFile)}
+                  className="relative w-full h-full min-h-0 overflow-hidden rounded-[20px]"
+                >
                   {type === "image" ? (
                     <img
                       src={url}
                       alt={alt}
-                      className="block w-full h-full object-cover pointer-events-none"
+                      className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                     />
                   ) : (
                     <video
@@ -126,14 +133,18 @@ export default function ProductMediaCarousel({
                       autoPlay={isActive}
                       muted
                       playsInline
-                      className="block w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   )}
 
-                  {useControls && (
+                  {useControls && isActive && (
                     <div className="flex z-10 justify-between gap-2 absolute top-1/2 left-2.5 right-2.5 -translate-y-1/2">
                       <MediaViewerSlideControl
-                        onClick={handlePrev}
+                        onPointerDownCapture={(e) => e.stopPropagation()}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handlePrev();
+                        }}
                         disabled={!canScrollPrev}
                         className={controlsClassName}
                         {...restControlsProps}
@@ -142,7 +153,11 @@ export default function ProductMediaCarousel({
                       </MediaViewerSlideControl>
 
                       <MediaViewerSlideControl
-                        onClick={handleNext}
+                        onPointerDownCapture={(e) => e.stopPropagation()}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleNext();
+                        }}
                         disabled={!canScrollNext}
                         className={controlsClassName}
                         {...restControlsProps}

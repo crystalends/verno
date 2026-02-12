@@ -1,12 +1,8 @@
-import React from "react";
-
-type TGoodIconProps = React.SVGProps<SVGSVGElement>;
-
 export default function GoodIcon({
   width = 24,
   height = 24,
   ...props
-}: TGoodIconProps) {
+}: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={width}

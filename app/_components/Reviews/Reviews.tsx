@@ -15,11 +15,11 @@ export default function Reviews() {
                 user={{
                   name: "Наталия",
                   endContent: (
-                    <span className="text-[#656361] text-[14px]">18.08.24</span>
+                    <span className="text-[#656361] text-sm">18.08.24</span>
                   ),
                 }}
                 endContent={
-                  <span className="text-[#A09790] font-circe text-[14px]">
+                  <span className="text-[#A09790] font-circe text-sm">
                     Отзыв Яндекс.Карты
                   </span>
                 }

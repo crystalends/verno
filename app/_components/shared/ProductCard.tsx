@@ -30,9 +30,7 @@ export default function ProductCard({
         <div className="flex flex-col gap-2.5">
           <h3 className="text-2xl">{name}</h3>
           {description && (
-            <p className="text-[#656361] font-circe text-[14px]">
-              {description}
-            </p>
+            <p className="text-[#656361] font-circe text-sm">{description}</p>
           )}
         </div>
         {bottomContent}

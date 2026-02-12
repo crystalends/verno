@@ -8,9 +8,9 @@ import HowOrder from "@/app/_components/Home/HowOrder/HowOrder";
 import OurShowrooms from "@/app/_components/Home/OurShowrooms/OurShowrooms";
 import Reviews from "@/app/_components/Reviews/Reviews";
 import SpecialOffer from "@/app/_components/Home/SpecialOffer";
-import { Button } from "@/app/_components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import OrderDesignProjectModal from "@/app/_components/DesignProject/OrderDesignProjectModal";
 
 export default async function Home() {
   return (
@@ -22,7 +22,7 @@ export default async function Home() {
               Кухни под ваш стиль.
               <br /> Мебель под вашу жизнь
             </h1>
-            <Button className="w-fit">Заказать дизайн-проект</Button>
+            <OrderDesignProjectModal />
           </div>
         </div>
       </div>

@@ -7,7 +7,9 @@ import FiltersSheet, {
   TFiltersState,
 } from "@/app/_components/Catalog/FiltersSheet";
 import Price from "@/app/_components/Catalog/Price";
+import Sort, { TSortOption } from "@/app/_components/Catalog/Sort";
 import OrderDesignProject from "@/app/_components/DesignProject/OrderDesignProject";
+import OrderDesignProjectModal from "@/app/_components/DesignProject/OrderDesignProjectModal";
 import FavoriteIcon from "@/app/_components/icons/FavoriteIcon";
 import Pagination from "@/app/_components/Pagination";
 import Block from "@/app/_components/shared/Block";
@@ -20,7 +22,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Kitchens() {
-  return const breadcrumbs: TBreadcrumb[] = [
+  const breadcrumbs: TBreadcrumb[] = [
     { value: "Главная", href: "/" },
     { value: "Кухни", href: "/kitchen" },
   ];
@@ -64,6 +66,21 @@ export default function Kitchens() {
     multi: {},
   });
 
+  const sortOptions: TSortOption[] = [
+    {
+      name: "Популярности",
+      href: "/sale?sort=popular",
+    },
+    {
+      name: "Уменьшению цены",
+      href: "/sale?sort=-price",
+    },
+    {
+      name: "Увеличению цены",
+      href: "/sale?sort=price",
+    },
+  ];
+
   return (
     <div className="wrapper-narrow">
       <Block>
@@ -77,9 +94,7 @@ export default function Kitchens() {
               </div>
 
               <div className="flex justify-between items-center gap-10">
-                <button className="font-circe text-[18px]">
-                  Сортировать по
-                </button>
+                <Sort options={sortOptions} />
 
                 <FiltersSheet
                   filters={filters}
@@ -131,9 +146,16 @@ export default function Kitchens() {
                     bottomContent={
                       <div className="flex gap-2.5 flex-wrap justify-between">
                         <Price value={12345} />
-                        <Button size="sm" className="lg:w-fit lg:!min-w-48.25">
-                          Заказать проект
-                        </Button>
+                        <OrderDesignProjectModal
+                          triggerSlot={
+                            <Button
+                              size="sm"
+                              className="lg:w-fit lg:!min-w-48.25"
+                            >
+                              Заказать проект
+                            </Button>
+                          }
+                        />
                       </div>
                     }
                   />

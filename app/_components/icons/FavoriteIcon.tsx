@@ -1,12 +1,8 @@
-import React from "react";
-
-type TFavoriteIconProps = React.SVGProps<SVGSVGElement>;
-
 export default function FavoriteIcon({
   width = 12.009696960449219,
   height = 16,
   ...props
-}: TFavoriteIconProps) {
+}: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={width}

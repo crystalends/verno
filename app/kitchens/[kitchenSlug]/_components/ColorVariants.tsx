@@ -1,6 +1,5 @@
 "use client";
 
-import CarouselControlButton from "@/app/_components/Carousel/CarouselControlButton";
 import ColorVariant from "@/app/_components/ColorVariant";
 import {
   Carousel,
@@ -8,6 +7,7 @@ import {
   CarouselItem,
 } from "@/app/_components/ui/carousel";
 import { useCarouselControls } from "@/app/_hooks/useCarouselControls";
+import CarouselControlButton from "@/app/kitchens/[kitchenSlug]/_components/CarouselControlButton";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ColorVariants() {
@@ -29,10 +29,10 @@ export default function ColorVariants() {
       </div>
       <Carousel setApi={setApi} opts={{ align: "start", loop: false }}>
         <CarouselContent className="flex gap-5">
-          {Array(10)
+          {Array(8)
             .fill(null)
-            .map((_, i) => (
-              <CarouselItem key={i} className="basis-55 shrink-0 grow-0">
+            .map((_, index) => (
+              <CarouselItem key={index} className="basis-55 shrink-0 grow-0">
                 <ColorVariant
                   name="Мелисса с патиной серебро"
                   imageProps={{

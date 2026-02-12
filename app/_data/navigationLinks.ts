@@ -14,7 +14,7 @@ export const navigationLinks = [
   },
   {
     title: "Акции",
-    href: "/promotions",
+    href: "/stocks",
   },
   {
     title: "Покупателю",

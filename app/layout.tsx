@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./_components/Header/Header";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/app/_components/ui/dialog";
-import { Button } from "@/app/_components/ui/button";
-import OrderDesignProject from "@/app/_components/DesignProject/OrderDesignProject";
-import { VisuallyHidden } from "radix-ui";
 import Footer from "@/app/_components/Footer/Footer";
+import OrderDesignProjectModal from "@/app/_components/DesignProject/OrderDesignProjectModal";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,23 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-avenir antialiased">
-        <Header
-          orderDesignProjectModalSlot={
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button className="w-fit">Заказать дизайн-проект</Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <VisuallyHidden.Root>
-                    <DialogTitle>Заказать дизайн-проект</DialogTitle>
-                  </VisuallyHidden.Root>
-                  <OrderDesignProject />
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
-          }
-        />
+        <Header orderDesignProjectModalSlot={<OrderDesignProjectModal />} />
         <main className="pt-21 lg:pt-30">{children}</main>
         <Footer />
       </body>

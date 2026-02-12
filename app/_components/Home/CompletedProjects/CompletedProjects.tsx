@@ -1,6 +1,6 @@
 "use client";
 
-import CarouselControlButton from "@/app/_components/Carousel/CarouselControlButton";
+import CarouselControlButton from "@/app/_components/Home/CompletedProjects/CarouselControlButton";
 import CompletedProject from "@/app/_components/Home/CompletedProjects/CompletedProject";
 import { Button } from "@/app/_components/ui/button";
 import {

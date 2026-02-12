@@ -107,7 +107,9 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
               <Button size="icon" variant="ghost" className="size-6 min-h-fit">
                 <Image src="/Vector.svg" alt="Search" width={16} height={16} />
               </Button>
-              <FavoriteButton />
+              <Link href="/favorites">
+                <FavoriteButton />
+              </Link>
               {orderDesignProjectModalSlot}
             </motion.div>
 
@@ -119,7 +121,11 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
               )}
             >
               <Navigation />
-              {isScrolled && <FavoriteButton />}
+              {isScrolled && (
+                <Link href="/favorites">
+                  <FavoriteButton />
+                </Link>
+              )}
             </motion.div>
           </div>
         </motion.div>

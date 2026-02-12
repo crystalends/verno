@@ -1,3 +1,4 @@
+import ArrowLeft from "@/app/_components/icons/ArrowLeft";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,17 +19,13 @@ export default function Breadcrumbs({ breadcrumbs }: TBreadcrumbsProps) {
       {breadcrumbs.map(({ value, href }, index) => {
         const children = (
           <React.Fragment key={index}>
-            {index > 0 ? (
-              "/ "
-            ) : (
-              <Image src="/Up 1.svg" width={13} height={13} alt={value} />
-            )}
+            {index > 0 ? "/ " : <ArrowLeft />}
             {value}
           </React.Fragment>
         );
 
         const className = clsx(
-          "text-[14px] font-circe flex font-medium items-center",
+          "text-sm font-circe flex font-medium items-center",
           index > 0 && "text-[#A3ACAC]",
         );
 

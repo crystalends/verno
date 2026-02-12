@@ -12,7 +12,7 @@ export default function OrderDesignProjectForm() {
   return (
     <form className="flex flex-col gap-5">
       <div className="flex flex-col gap-2.5">
-        <div className="flex gap-5">
+        <div className="flex flex-wrap sm:flex-nowrap gap-5">
           <Input placeholder="Имя" />
           <Input placeholder="Телефон" />
         </div>

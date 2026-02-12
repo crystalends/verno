@@ -22,7 +22,7 @@ export default function Promotions({
             openSales &&
               "px-2.5 py-1.25 bg-accent rounded-[30px] flex items-center gap-2.5",
           )}
-          href="/sales"
+          href="/sale"
         >
           Распродажа
           {openSales && (
@@ -33,9 +33,9 @@ export default function Promotions({
       {openSales && (
         <ul className="flex flex-col gap-2.5 pt-12.25">
           {[
-            { name: "Прованс", href: "/sales/provans" },
-            { name: "Современный", href: "/sales/modern" },
-            { name: "Неоклассика", href: "/sales/classic" },
+            { name: "Прованс", href: "/sale?category=provans" },
+            { name: "Современный", href: "/sale?category=modern" },
+            { name: "Неоклассика", href: "/sale?category=neoclassic" },
           ].map((link) => (
             <Link key={link.href} href={link.href}>
               {link.name}

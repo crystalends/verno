@@ -1,12 +1,8 @@
-import React from "react";
-
-type TFilterIconProps = React.SVGProps<SVGSVGElement>;
-
 export default function FilterIcon({
   width = 17,
   height = 17,
   ...props
-}: TFilterIconProps) {
+}: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={width}
