@@ -53,7 +53,12 @@ export default function Sale() {
           <div className="flex flex-col gap-20">
             <div className="flex flex-col gap-10">
               <Breadcrumbs breadcrumbs={breadcrumbs} />
-              <BlockTitle>Kуxoнный гapнитуp Джулия</BlockTitle>
+              <div className="flex gap-5 justify-between">
+                <BlockTitle>Kуxoнный гapнитуp Джулия</BlockTitle>
+                <div>
+                  <FavoriteButton />
+                </div>
+              </div>
               <ProductMediaViewer mediaFiles={mediaFiles} />
               <div className="flex items-center flex-wrap gap-20.75">
                 <div className="flex flex-col gap-0.5">
@@ -70,25 +75,27 @@ export default function Sale() {
 
             <div className="flex flex-col gap-5">
               <div className="flex flex-wrap justify-between items-center gap-5">
-                <h2 className="text-[32px] font-medium">Характеристики</h2>
+                <h2 className="text-[32px] font-medium leading-8">
+                  Характеристики
+                </h2>
                 <FavoriteButton />
               </div>
               <div className="flex flex-col lg:flex-row justify-between gap-5">
-                <div className="flex flex-1 flex-col gap-10">
+                <div className="flex flex-1 flex-col max-w-[820px] gap-10">
                   <div className="flex flex-col gap-2.5">
                     {Array.from({ length: 5 }, (_, i) => (
                       <div key={i} className="flex items-end">
-                        <span className="whitespace-nowrap text-[#A09790] font-circe">
+                        <span className="whitespace-nowrap text-[#A09790] text-[18px] font-circe">
                           Покрытие фасада
                         </span>
                         <span className="flex-1 border-b border-[#A09790] border-dotted mx-2"></span>
-                        <span className="whitespace-nowrap font-circe">
+                        <span className="whitespace-nowrap text-[18px] font-circe">
                           Эмаль
                         </span>
                       </div>
                     ))}
                   </div>
-                  <p className="text-[18px] font-circe">
+                  <p className="text-[18px] leading-5.5 font-circe">
                     Cepгeй и Aлeнa - люди твopчecкиx пpoфeccий. Cepгeй
                     пpoфeccиoнaльный фoтoгpaф, a Aлeнa зaнимaeтcя гpaфичecким
                     дизaйнoм. В иx ceмьe двoe чудecныx дeтeй, c кoтopыми oни

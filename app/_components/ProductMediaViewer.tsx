@@ -18,6 +18,7 @@ export default function ProductMediaViewer({
     <div className="flex flex-col gap-5 ">
       <div className="h-80 sm:h-162.5 overflow-hidden">
         <ProductMediaCarousel
+          useControls={viewerIndex === null}
           active={{
             index: activeIndex,
             setIndex: setActiveIndex,

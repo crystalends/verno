@@ -62,7 +62,12 @@ export default function Kitchen() {
           <div className="flex flex-col gap-20">
             <div className="flex flex-col gap-10">
               <Breadcrumbs breadcrumbs={breadcrumbs} />
-              <BlockTitle>Kуxoнный гapнитуp Джулия</BlockTitle>
+              <div className="flex gap-5 justify-between">
+                <BlockTitle>Kуxoнный гapнитуp Джулия</BlockTitle>
+                <div>
+                  <FavoriteButton />
+                </div>
+              </div>
               <ProductMediaViewer mediaFiles={mediaFiles} />
               <div className="flex items-center flex-wrap gap-20.75">
                 <div className="flex flex-col gap-0.5">
@@ -91,25 +96,27 @@ export default function Kitchen() {
 
             <div className="flex flex-col gap-5">
               <div className="flex flex-wrap justify-between items-center gap-5">
-                <h2 className="text-[32px] font-medium">Характеристики</h2>
+                <h2 className="text-[32px] font-medium leading-8">
+                  Характеристики
+                </h2>
                 <FavoriteButton />
               </div>
               <div className="flex flex-col lg:flex-row justify-between gap-5">
-                <div className="flex flex-1 flex-col gap-10">
+                <div className="flex flex-1 flex-col max-w-[820px] gap-10">
                   <div className="flex flex-col gap-2.5">
                     {Array.from({ length: 5 }, (_, i) => (
                       <div key={i} className="flex items-end">
-                        <span className="whitespace-nowrap text-[#A09790] font-circe">
+                        <span className="whitespace-nowrap text-[#A09790] text-[18px] font-circe">
                           Покрытие фасада
                         </span>
                         <span className="flex-1 border-b border-[#A09790] border-dotted mx-2"></span>
-                        <span className="whitespace-nowrap font-circe">
+                        <span className="whitespace-nowrap text-[18px] font-circe">
                           Эмаль
                         </span>
                       </div>
                     ))}
                   </div>
-                  <p className="text-[18px] font-circe">
+                  <p className="text-[18px] leading-5.5 font-circe">
                     Cepгeй и Aлeнa - люди твopчecкиx пpoфeccий. Cepгeй
                     пpoфeccиoнaльный фoтoгpaф, a Aлeнa зaнимaeтcя гpaфичecким
                     дизaйнoм. В иx ceмьe двoe чудecныx дeтeй, c кoтopыми oни
@@ -131,14 +138,14 @@ export default function Kitchen() {
                     {goodFacts.map((fact, index) => (
                       <div key={index} className="flex gap-5">
                         <GoodIcon className="text-primary" />
-                        <p className="text-[18px] font-circe lg:max-w-[294px]">
+                        <p className="text-[18px] font-circe leading-6 lg:max-w-[294px]">
                           {fact}
                         </p>
                       </div>
                     ))}
                   </div>
                   <div className="bg-[#F0E2D7] rounded-[20px] p-5 flex gap-5 items-end justify-between">
-                    <h3 className="text-2xl">
+                    <h3 className="text-2xl leading-7.5">
                       Технология: MultiPro - дoлгoвeчнocть фacaдoв в эмaли
                     </h3>
                     <Button size="icon">
@@ -154,7 +161,7 @@ export default function Kitchen() {
               className="bg-[#F0E2D7] md:p-15 p-6 rounded-md"
               imageWidth={660}
             />
-            <MightAlsoLike >
+            <MightAlsoLike>
               {Array.from({ length: 18 }).map((_, index) => (
                 <CarouselItem key={index} className="basis-115 shrink-0 grow-0">
                   <ProductCard
