@@ -8,9 +8,9 @@ import { useSmartHeader } from "@/app/_hooks/Header/useSmartHeader";
 import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 import { useIsScrolled } from "@/app/_hooks/useIsScrolled";
-import clsx from "clsx";
 import Link from "next/link";
 import FavoriteButton from "@/app/_components/FavoriteButton";
+import clsx from "clsx";
 
 type THeaderProps = {
   orderDesignProjectModalSlot: React.ReactNode;
@@ -22,26 +22,26 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
 
   const isScrolled = useIsScrolled(scrollY, 50);
 
+  const t = useTransform(scrollY, [0, 80], [0, 1]);
+
   const headerPaddingTop = useTransform(
-    scrollY,
-    [0, 100],
+    t,
+    [0, 1],
     [isMobile ? "10px" : "20px", "10px"],
   );
-  const logoWidth = useTransform(scrollY, [0, 100], [164, 106]);
-  const logoHeight = useTransform(scrollY, [0, 100], [49, 32]);
-  const contactsOpacity = useTransform(scrollY, [0, 50], [1, 0]);
-  const contactsDisplay = useTransform(scrollY, [0, 51], ["flex", "none"]);
+  const logoWidth = useTransform(t, [0, 1], [164, 106]);
+  const logoHeight = useTransform(t, [0, 1], [49, 32]);
 
-  const blurValue = useTransform(
-    scrollY,
-    [0, 100],
-    ["blur(0px)", "blur(20px)"],
-  );
+  const blurValue = useTransform(t, [0, 1], ["blur(0px)", "blur(20px)"]);
   const headerBg = useTransform(
-    scrollY,
-    [0, 100],
+    t,
+    [0, 1],
     ["rgba(255, 250, 248, 1)", "rgba(249, 244, 241, 0.2)"],
   );
+
+  const contactsOpacity = useTransform(t, [0, 1], [1, 0]);
+  const contactsHeight = useTransform(t, [0, 1], ["43px", "0px"]);
+  const contactsMarginBottom = useTransform(t, [0, 1], ["10px", "0px"]);
 
   return (
     <motion.header
@@ -57,10 +57,10 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
         backdropFilter: blurValue,
         WebkitBackdropFilter: blurValue,
       }}
-      className="fixed top-0 left-0 pb-2.5 right-0 z-50 transition-colors duration-300"
+      className="fixed top-0 left-0 right-0 z-50 pb-2.5 transition-colors duration-300"
     >
       <div className="wrapper-narrow">
-        <motion.div layout className="flex justify-between items-start gap-5">
+        <motion.div layout className="flex items-start justify-between gap-5">
           <motion.div
             layout
             style={{ width: logoWidth, height: logoHeight }}
@@ -77,10 +77,18 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
             </Link>
           </motion.div>
 
-          <div className="hidden lg:flex flex-col items-end w-full gap-2.5">
+          <motion.div
+            layout
+            className="hidden w-full flex-col items-end lg:flex"
+          >
             <motion.div
-              style={{ opacity: contactsOpacity, display: contactsDisplay }}
-              className="lg:flex hidden w-fit gap-5 items-center"
+              layout="position"
+              style={{
+                opacity: contactsOpacity,
+                height: contactsHeight,
+                marginBottom: contactsMarginBottom,
+              }}
+              className="flex w-fit items-center gap-5 overflow-hidden"
             >
               <div className="flex items-center gap-[3.5px]">
                 <Image
@@ -93,23 +101,27 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
                   Москва
                 </span>
               </div>
+
               <div className="flex items-center gap-1.25">
                 <Image src="/Frame 23.svg" alt="Call" width={34} height={34} />
-                <div className="flex items-end flex-col">
+                <div className="flex flex-col items-end">
                   <span className="font-circe text-sm tracking-[1px]">
                     +7 (499) 841-84-10
                   </span>
-                  <span className="text-[12px] font-circe text-[#A09790]">
+                  <span className="font-circe text-[12px] text-[#A09790]">
                     Мельбград
                   </span>
                 </div>
               </div>
+
               <Button size="icon" variant="ghost" className="size-6 min-h-fit">
                 <Image src="/Vector.svg" alt="Search" width={16} height={16} />
               </Button>
+
               <Link href="/favorites">
                 <FavoriteButton />
               </Link>
+
               {orderDesignProjectModalSlot}
             </motion.div>
 
@@ -120,14 +132,29 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
                 isScrolled && "max-w-290.25 gap-[118.5px]",
               )}
             >
-              <Navigation />
-              {isScrolled && (
-                <Link href="/favorites">
-                  <FavoriteButton />
-                </Link>
-              )}
+              <motion.div layout className="min-w-0 flex-1">
+                <Navigation />
+              </motion.div>
+              <motion.div
+                layout
+                className="relative flex items-center justify-end overflow-hidden"
+              >
+                <motion.div
+                  layout
+                  initial={false}
+                  animate={
+                    isScrolled ? { x: 0, opacity: 1 } : { x: 24, opacity: 0 }
+                  }
+                  transition={{ type: "spring", stiffness: 520, damping: 38 }}
+                  style={{ pointerEvents: isScrolled ? "auto" : "none" }}
+                >
+                  <Link href="/favorites">
+                    <FavoriteButton />
+                  </Link>
+                </motion.div>
+              </motion.div>
             </motion.div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </motion.header>

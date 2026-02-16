@@ -4,11 +4,7 @@ import MediaViewer from "@/app/_components/shared/Media/MediaViewer";
 import { useState } from "react";
 import { TMediaFile } from "@/app/_types/TMediaFile";
 import MediaPreview from "@/app/_components/shared/Media/MediaPreview";
-
-type TInfo = {
-  count: string;
-  value: string;
-};
+import { TInfo } from "@/app/_types/TInfo";
 
 const HEIGHT_CONFIG = [
   "lg:h-[220px]",

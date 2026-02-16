@@ -1,4 +1,4 @@
-import OurShowroom from "@/app/_components/Home/OurShowrooms/OurShowroom";
+import OurShowroom from "@/app/_components/OurShowrooms/OurShowroom";
 
 export default function OurShowrooms() {
   return (

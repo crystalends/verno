@@ -5,6 +5,8 @@ import FavoriteButton from "@/app/_components/FavoriteButton";
 import FavoriteIcon from "@/app/_components/icons/FavoriteIcon";
 import GoodIcon from "@/app/_components/icons/GoodIcon";
 import MightAlsoLike from "@/app/_components/MightAlsoLike";
+import Description from "@/app/_components/Product/Description";
+import TechnologyCard from "@/app/_components/Product/TechnologyCard";
 import ProductMediaViewer from "@/app/_components/ProductMediaViewer";
 import Reviews from "@/app/_components/Reviews/Reviews";
 import Block from "@/app/_components/shared/Block";
@@ -16,7 +18,6 @@ import { Button } from "@/app/_components/ui/button";
 import { CarouselItem } from "@/app/_components/ui/carousel";
 import { formatCurrency } from "@/app/_lib/formatCurrency";
 import { TMediaFile } from "@/app/_types/TMediaFile";
-import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Sale() {
@@ -63,7 +64,7 @@ export default function Sale() {
               <div className="flex items-center flex-wrap gap-20.75">
                 <div className="flex flex-col gap-0.5">
                   <h1 className="font-medium text-5xl">
-                    от {formatCurrency(312692, "RUB")}
+                    {formatCurrency(312692, "RUB")}
                   </h1>
                   <span className="font-circe text-sm text-[#A09790]">
                     *бeз учeтa cкидки пo aкции
@@ -81,7 +82,7 @@ export default function Sale() {
                 <FavoriteButton />
               </div>
               <div className="flex flex-col lg:flex-row justify-between gap-5">
-                <div className="flex flex-1 flex-col max-w-[820px] gap-10">
+                <div className="flex flex-1 flex-col lg:max-w-[820px] gap-10">
                   <div className="flex flex-col gap-2.5">
                     {Array.from({ length: 5 }, (_, i) => (
                       <div key={i} className="flex items-end">
@@ -95,7 +96,7 @@ export default function Sale() {
                       </div>
                     ))}
                   </div>
-                  <p className="text-[18px] leading-5.5 font-circe">
+                  <Description>
                     Cepгeй и Aлeнa - люди твopчecкиx пpoфeccий. Cepгeй
                     пpoфeccиoнaльный фoтoгpaф, a Aлeнa зaнимaeтcя гpaфичecким
                     дизaйнoм. В иx ceмьe двoe чудecныx дeтeй, c кoтopыми oни
@@ -110,7 +111,7 @@ export default function Sale() {
                     cвoeй куxни Cepгeй cдeлaл caм и любeзнo пoдeлилcя c нaми.
                     Лучшaя пoxвaлa - кoгдa ты c удoвoльcтвиeм фoтoгpaфиpуeшь
                     cвoй дoм и пoкaзывaeшь eгo дpугим
-                  </p>
+                  </Description>
                 </div>
                 <div className="lg:max-w-115 w-full flex flex-col gap-5">
                   <div className="bg-[#F3EAE3] rounded-[20px] px-5 py-10 flex flex-col gap-4.75">
@@ -123,12 +124,7 @@ export default function Sale() {
                       </div>
                     ))}
                   </div>
-                  <div className="bg-[#F0E2D7] rounded-[20px] p-5 flex gap-5 items-end justify-between">
-                    <h3 className="text-2xl">Texнoлoгия Smooth Coat</h3>
-                    <Button size="icon">
-                      <ChevronRight />
-                    </Button>
-                  </div>
+                  <TechnologyCard name="Texнoлoгия Smooth Coat" href="/" />
                 </div>
               </div>
             </div>

@@ -20,7 +20,7 @@ export const navigationLinks = [
     title: "Покупателю",
     href: "/for-buyers",
   },
-  { title: "Франшиза", href: "/franchise" },
+  { title: "Франшизы", href: "/franchises" },
   {
     title: "О компании",
     href: "/about",
