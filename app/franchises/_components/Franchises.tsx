@@ -1,11 +1,12 @@
-import OurShowroom from "@/app/_components/OurShowrooms/OurShowroom";
 import Block from "@/app/_components/shared/Block";
 import Breadcrumbs, { TBreadcrumb } from "@/app/_components/ui/breadcrumbs";
 import { Button } from "@/app/_components/ui/button";
 import { arrayChunk } from "@/app/_lib/array";
 import { formatCurrency } from "@/app/_lib/formatCurrency";
 import { TInfo } from "@/app/_types/TInfo";
-import Advantages from "@/app/franchises/_components/Advantages";
+import Advantages from "@/app/franchises/_components/Advantages/Advantages";
+import Formats from "@/app/franchises/_components/Formats/Formats";
+import Showrooms from "@/app/franchises/_components/Showrooms";
 
 export default function Franchises() {
   const breadcrumbs: TBreadcrumb[] = [
@@ -110,30 +111,12 @@ export default function Franchises() {
                 ))}
               </div>
             </div>
-            <div className="flex flex-col gap-5">
-              <h2 className="text-[32px] font-medium">Наши салоны</h2>
-              <div className="flex gap-5 overflow-auto">
-                {Array(4)
-                  .fill(null)
-                  .map((_, i) => (
-                    <OurShowroom
-                      className="bg-white"
-                      key={i}
-                      imageProps={{
-                        src: "/a13d8f678d77ec8fbfd19d11a22a2a53e97f15d3.webp",
-                      }}
-                      name="TЦ «ЭлитCтpoй мaтepиaлы»"
-                      address="Mocквa, TЦ «ЭлитCтpoй мaтepиaлы» MKAД 51 км, пoc. Зapeчьe, ул. Topгoвaя, cтp.2 , этaж 2, пaвильoн N-9"
-                      workingHours="пн-вc 10:00 - 20:00"
-                      phone="+7 (499) 841-84-10"
-                    />
-                  ))}
-              </div>
-            </div>
+            <Showrooms />
             <Advantages />
           </div>
         </div>
       </div>
+      <Formats />
     </div>
   );
 }

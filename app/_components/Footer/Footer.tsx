@@ -75,7 +75,7 @@ const bottomLinks = [
     children: (
       <>
         Разработан
-        <Image src="/Слой_x0020_1.svg" alt="Logo" width={39} height={16} />
+        <Image src="/logo-wordmark.svg" alt="Logo" width={39} height={16} />
       </>
     ),
     href: "https://is-art.ru/",
@@ -160,7 +160,7 @@ export default function Footer() {
                     href="https://vk.com/"
                     className="size-12 rounded-full border border-[#656361] flex items-center justify-center hover:bg-accent transition-all"
                   >
-                    <Image src="/vk.svg" width={24} height={16} alt="VK" />
+                    <Image src="/vk-logo.svg" width={24} height={16} alt="VK" />
                   </Link>
                 ))}
             </div>

@@ -25,7 +25,7 @@ export default function Search() {
             <div className="flex gap-2.5">
               <div className="relative h-8 w-full">
                 <Image
-                  src="/Vector.svg"
+                  src="/search.svg"
                   alt="Search"
                   style={{ position: "absolute", top: 9.33, left: 43.33 }}
                   width={13.333282470703125}

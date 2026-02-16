@@ -43,7 +43,7 @@ export default function Price({
               aria-label="Подробная информация о цене"
             >
               <Image
-                src="/Information Circle.svg"
+                src="/info-circle.svg"
                 alt=""
                 width={13.333333015441895}
                 height={13.333333015441895}

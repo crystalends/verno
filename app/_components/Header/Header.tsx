@@ -92,7 +92,7 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
             >
               <div className="flex items-center gap-[3.5px]">
                 <Image
-                  src="/Location.svg"
+                  src="/map-pin.svg"
                   alt="Location"
                   width={10}
                   height={13}
@@ -103,7 +103,7 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
               </div>
 
               <div className="flex items-center gap-1.25">
-                <Image src="/Frame 23.svg" alt="Call" width={34} height={34} />
+                <Image src="/phone-call.svg" alt="Call" width={34} height={34} />
                 <div className="flex flex-col items-end">
                   <span className="font-circe text-sm tracking-[1px]">
                     +7 (499) 841-84-10
@@ -115,7 +115,7 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
               </div>
 
               <Button size="icon" variant="ghost" className="size-6 min-h-fit">
-                <Image src="/Vector.svg" alt="Search" width={16} height={16} />
+                <Image src="/search.svg" alt="Search" width={16} height={16} />
               </Button>
 
               <Link href="/favorites">

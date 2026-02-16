@@ -10,7 +10,7 @@ export default function Facts() {
       description: "Трендовые фасады в стилях от ар-деко до прованса",
       iconSlot: (
         <Image
-          src="/Vector (2).svg"
+          src="/dual-panel.svg"
           width={25}
           height={30}
           alt="Актуальный дизайн"
@@ -22,7 +22,7 @@ export default function Facts() {
       description: "Инновационные материалы — основа качества VERNO",
       iconSlot: (
         <Image
-          src="/Vector-1.svg"
+          src="/ornate-badge.svg"
           width={26}
           height={30}
           alt="Уникальные технологии"
@@ -34,7 +34,7 @@ export default function Facts() {
       description: "Умный дизайн: эстетика + эргономика под ваши задачи",
       iconSlot: (
         <Image
-          src="/Vector-2.svg"
+          src="/calendar-stats.svg"
           width={32.85}
           height={30}
           alt="Продуманные кухни"
@@ -46,7 +46,7 @@ export default function Facts() {
       description: "ЭКО-массив — натуральность, экология, простота, цена",
       iconSlot: (
         <Image
-          src="/Group 10.svg"
+          src="/pos-terminal.svg"
           width={31.97}
           height={30}
           alt="Эксклюзивные модели фасадов"
@@ -58,7 +58,7 @@ export default function Facts() {
       description: "Всё включено: техника, мебель, зоны",
       iconSlot: (
         <Image
-          src="/Vector-3.svg"
+          src="/user-card.svg"
           width={32.85}
           height={30}
           alt="Кухня под ключ"

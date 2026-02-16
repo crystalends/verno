@@ -48,7 +48,7 @@ export default function OurShowroom({
       </div>
 
       <div className="flex items-center gap-1.25">
-        <Image src="/Frame 23.svg" alt="Call" width={34} height={34} />
+        <Image src="/phone-call.svg" alt="Call" width={34} height={34} />
         <Link className="font-circe text-[18px]" href={`tel:${phone}`}>
           {phone}
         </Link>

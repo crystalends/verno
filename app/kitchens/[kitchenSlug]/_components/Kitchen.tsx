@@ -5,7 +5,6 @@ import FavoriteButton from "@/app/_components/FavoriteButton";
 import FavoriteIcon from "@/app/_components/icons/FavoriteIcon";
 import GoodIcon from "@/app/_components/icons/GoodIcon";
 import MightAlsoLike from "@/app/_components/MightAlsoLike";
-import OrderPriceCalculation from "@/app/_components/PriceCalculation/OrderPriceCalculation";
 import Description from "@/app/_components/Product/Description";
 import TechnologyCard from "@/app/_components/Product/TechnologyCard";
 import ProductMediaViewer from "@/app/_components/ProductMediaViewer";
@@ -17,18 +16,10 @@ import { Badge } from "@/app/_components/ui/badge";
 import Breadcrumbs, { TBreadcrumb } from "@/app/_components/ui/breadcrumbs";
 import { Button } from "@/app/_components/ui/button";
 import { CarouselItem } from "@/app/_components/ui/carousel";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/app/_components/ui/dialog";
 import { formatCurrency } from "@/app/_lib/formatCurrency";
 import { TMediaFile } from "@/app/_types/TMediaFile";
 import ColorVariants from "@/app/kitchens/[kitchenSlug]/_components/ColorVariants";
 import Link from "next/link";
-import { VisuallyHidden } from "radix-ui";
 
 export default function Kitchen() {
   const breadcrumbs: TBreadcrumb[] = [

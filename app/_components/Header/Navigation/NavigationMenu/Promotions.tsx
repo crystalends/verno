@@ -26,7 +26,7 @@ export default function Promotions({
         >
           Распродажа
           {openSales && (
-            <Image src="/Right 2.svg" width={14} height={14} alt="Распродажа" />
+            <Image src="/chevron-right.svg" width={14} height={14} alt="Распродажа" />
           )}
         </Link>
       </ul>

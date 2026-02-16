@@ -11,7 +11,7 @@ type TMediaPreviewProps = {
 export default function MediaPreview({
   isVideo = false,
   wrapperProps,
-  playSlot = <Image src="/Vector (3).svg" width={17} height={18} alt="Play" />,
+  playSlot = <Image src="/play-badge.svg" width={17} height={18} alt="Play" />,
   ...props
 }: TMediaPreviewProps) {
   const { className, alt, ...restProps } = props;
