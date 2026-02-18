@@ -1,6 +1,6 @@
 import OrderDesignProject from "@/app/_components/DesignProject/OrderDesignProject";
 import About from "@/app/_components/Home/About/About";
-import Block from "@/app/_components/Home/Block";
+import TitledBlock from "@/app/_components/shared/TitledBlock";
 import CompletedProjects from "@/app/_components/Home/CompletedProjects/CompletedProjects";
 import Facts from "@/app/_components/Home/Facts/Facts";
 import CornersHouse from "@/app/_components/Home/HouseCorners";
@@ -50,7 +50,7 @@ export default async function Home() {
               }
             />
           </div>
-          <Block title="Мебель для каждого уголка вашего дома">
+          <TitledBlock title="Мебель для каждого уголка вашего дома">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:grid-cols-4">
               {Array(4)
                 .fill(null)
@@ -65,7 +65,7 @@ export default async function Home() {
                   </Link>
                 ))}
             </div>
-          </Block>
+          </TitledBlock>
           <Facts />
         </div>
       </div>

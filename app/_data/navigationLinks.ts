@@ -23,7 +23,7 @@ export const navigationLinks = [
   { title: "Франшизы", href: "/franchises" },
   {
     title: "О компании",
-    href: "/about",
+    href: "/about-company",
   },
-  { title: "Салоны", href: "/salons" },
+  { title: "Салоны", href: "/showrooms" },
 ];

@@ -25,8 +25,12 @@ export default function OrderPriceCalculationForm() {
       </div>
       <div className="flex gap-5 flex-wrap xl:flex-nowrap">
         <Field orientation="horizontal">
-          <Checkbox id="terms-checkbox" name="terms-checkbox" />
-          <Label htmlFor="terms-checkbox">
+          <Checkbox
+            id="personal-data-consent"
+            name="personalDataConsent"
+            required
+          />
+          <Label htmlFor="personal-data-consent">
             Даю согласие на обработку персональных данных
           </Label>
         </Field>

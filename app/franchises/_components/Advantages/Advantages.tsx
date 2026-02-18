@@ -1,6 +1,7 @@
 import Advantage, {
   TAdvantageProps,
 } from "@/app/franchises/_components/Advantages/Advantage";
+import Block from "@/app/_components/shared/TitledBlock";
 import Image from "next/image";
 
 export default function Advantages() {
@@ -16,7 +17,14 @@ export default function Advantages() {
         "Подключение к отработанной системе интернет-продаж",
         "Подготовка к открытию и запуск салона",
       ],
-      iconSlot: <Image src="/storefront.svg" width={28} height={28} alt="" />,
+      iconSlot: (
+        <Image
+          src="/storefront.svg"
+          width={28}
+          height={28}
+          alt="Открытие салона под ключ"
+        />
+      ),
     },
     {
       name: "Конкурентоспособный ассортимент",
@@ -26,7 +34,14 @@ export default function Advantages() {
         "Конкурентное ценовое предложение",
         "Ассортимент для комплексного решения интерьера кухни и дома в целом (гостиные, шкафы, гардеробы, мебель для ванной, обеденные группы, элементы интерьера) приносит увеличение оборота на 25–30%",
       ],
-      iconSlot: <Image src="/pos-terminal.svg" width={28} height={28} alt="" />,
+      iconSlot: (
+        <Image
+          src="/pos-terminal.svg"
+          width={31.969738006591797}
+          height={29.999940872192383}
+          alt="Конкурентоспособный ассортимент"
+        />
+      ),
     },
     {
       name: "Надёжный и стабильный производитель",
@@ -39,7 +54,12 @@ export default function Advantages() {
         "Непрерывное развитие и совершенствование фабрики",
       ],
       iconSlot: (
-        <Image src="/delivery-truck.svg" width={30} height={30} alt="" />
+        <Image
+          src="/delivery-truck.svg"
+          width={33.74116134643555}
+          height={29.999990463256836}
+          alt="Надёжный и стабильный производитель"
+        />
       ),
     },
     {
@@ -51,7 +71,12 @@ export default function Advantages() {
         "Размещение салона на официальном сайте, публикации в социальных сетях",
       ],
       iconSlot: (
-        <Image src="/browser-window.svg" width={28} height={28} alt="" />
+        <Image
+          src="/browser-window.svg"
+          width={30}
+          height={30}
+          alt="Рекламная поддержка"
+        />
       ),
     },
     {
@@ -63,7 +88,12 @@ export default function Advantages() {
         "Эксклюзивное партнёрство в регионе (подробные условия у менеджера)",
       ],
       iconSlot: (
-        <Image src="/document-check.svg" width={28} height={28} alt="" />
+        <Image
+          src="/document-check.svg"
+          width={23.006330490112305}
+          height={29.999984741210938}
+          alt="Доступный бизнес с минимальными рисками"
+        />
       ),
     },
     {
@@ -76,22 +106,23 @@ export default function Advantages() {
         "Возможность регулировать свою наценку и прибыль",
       ],
       iconSlot: (
-        <Image src="/analytics-report.svg" width={28} height={28} alt="" />
+        <Image
+          src="/analytics-report.svg"
+          width={30}
+          height={30}
+          alt="Выгодное инвестирование"
+        />
       ),
     },
   ];
 
   return (
-    <section className="flex flex-col gap-6">
-      <h2 className="text-[32px] leading-[1.1] font-medium text-[#111]">
-        Наши преимущества
-      </h2>
-
+    <Block title="Наши преимущества">
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
         {advantages.map((advantage, index) => (
           <Advantage key={index} {...advantage} />
         ))}
       </div>
-    </section>
+    </Block>
   );
 }

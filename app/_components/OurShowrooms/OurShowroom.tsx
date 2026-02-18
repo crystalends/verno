@@ -24,17 +24,20 @@ export default function OurShowroom({
   return (
     <div
       className={clsx(
-        "flex flex-col p-5 rounded-[10px] min-w-[340px] justify-between bg-background",
+        "flex flex-col p-5 rounded-[10px] justify-between bg-background",
         imageProps ? "gap-5" : "gap-10",
         className,
       )}
       {...restProps}
     >
-      <div className={clsx("flex flex-col", imageProps ? "gap-5" : "gap-2.5")}>
+      <div className={clsx("flex flex-col", imageProps ? "gap-2.5" : "gap-5")}>
         {imageProps && (
           <Image
             {...imageProps}
-            className={clsx("rounded-[5px] object-cover", imageProps.className)}
+            className={clsx(
+              "rounded-[5px] object-cover h-[162px] w-full",
+              imageProps.className,
+            )}
             height={162}
             width={300}
             alt={name}

@@ -20,15 +20,19 @@ export default function OrderDesignProjectForm() {
         <Textarea placeholder="Ваше сообщение" />
       </div>
       <Field orientation="horizontal">
-        <Checkbox id="terms-checkbox" name="terms-checkbox" />
-        <Label htmlFor="terms-checkbox">
-          Xoчу пoлучить плaн «Kaк пoдгoтoвитьcя к зaкaзу куxни»
+        <Checkbox id="get-preparation-plan" name="getPreparationPlan" />
+        <Label htmlFor="get-preparation-plan">
+          Хочу получить план «Как подготовиться к заказу кухни»
         </Label>
       </Field>
       <div className="flex gap-5 flex-wrap xl:flex-nowrap">
         <Field orientation="horizontal">
-          <Checkbox id="terms-checkbox" name="terms-checkbox" />
-          <Label htmlFor="terms-checkbox">
+          <Checkbox
+            id="personal-data-consent"
+            name="personalDataConsent"
+            required
+          />
+          <Label htmlFor="personal-data-consent">
             Даю согласие на обработку персональных данных
           </Label>
         </Field>

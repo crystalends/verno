@@ -7,17 +7,14 @@ type TFormatProps = {
   imageProps: Omit<ImageProps, "width" | "height" | "fill" | "alt">;
   name: string;
 
-  // Верхние маленькие карточки
-  s: string; // "S салона" значение
-  marginality: string; // "Маржинальность" значение
+  s: string;
+  marginality: string;
 
-  // Большая карточка "Комплектация выставки"
-  exhibitionTitle?: string; // по умолчанию "Комплектация выставки"
+  exhibitionTitle?: string;
   exhibitionItems: string[];
 
-  // Нижние маленькие карточки
-  investments: string; // "Первичные инвестиции"
-  payback: string; // "Срок окупаемости"
+  investments: string;
+  payback: string;
 
   endContent: React.ReactNode;
 } & HTMLAttributes<HTMLDivElement>;
@@ -39,7 +36,7 @@ export default function Format({
   return (
     <div
       className={clsx(
-        "bg-[#F3EAE3] rounded-[34px] p-5 flex flex-col gap-3.75",
+        "bg-[#F3EAE3] rounded-[20px] p-5 flex flex-col gap-3.75",
         className,
       )}
       {...restProps}

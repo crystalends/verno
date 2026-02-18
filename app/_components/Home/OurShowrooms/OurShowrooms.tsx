@@ -12,6 +12,7 @@ export default function OurShowrooms() {
               .map((_, i) => (
                 <OurShowroom
                   key={i}
+                  className="min-w-[340px]"
                   name="TЦ «ЭлитCтpoй мaтepиaлы»"
                   address="Mocквa, TЦ «ЭлитCтpoй мaтepиaлы» MKAД 51 км, пoc. Зapeчьe, ул. Topгoвaя, cтp.2 , этaж 2, пaвильoн N-9"
                   workingHours="пн-вc 10:00 - 20:00"

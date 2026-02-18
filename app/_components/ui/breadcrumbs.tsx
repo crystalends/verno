@@ -26,7 +26,7 @@ export default function Breadcrumbs({ breadcrumbs }: TBreadcrumbsProps) {
 
         const className = clsx(
           "text-sm font-circe flex font-medium items-center",
-          index > 0 && "text-[#A3ACAC]",
+          index == breadcrumbs.length - 1 && "text-[#A3ACAC]",
         );
 
         return (

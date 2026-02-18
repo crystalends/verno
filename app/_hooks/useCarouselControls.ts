@@ -7,6 +7,7 @@ export const useCarouselControls = (
 ) => {
   const [api, setApi] = useState<CarouselApi>();
   const [activeIndex, setActiveIndex] = useState(0);
+  const [totalSlides, setTotalSlides] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
@@ -14,9 +15,12 @@ export const useCarouselControls = (
     if (!apiInstance) return null;
 
     const newIndex = apiInstance.selectedScrollSnap();
+
     setActiveIndex(newIndex);
+    setTotalSlides(apiInstance.scrollSnapList().length);
     setCanScrollPrev(apiInstance.canScrollPrev());
     setCanScrollNext(apiInstance.canScrollNext());
+
     return newIndex;
   }, []);
 
@@ -52,7 +56,6 @@ export const useCarouselControls = (
     if (!api || typeof initialIndex !== "number") return;
 
     api.scrollTo(initialIndex, true);
-
     // eslint-disable-next-line react-hooks/set-state-in-effect
     updateStates(api);
   }, [api, initialIndex, updateStates]);
@@ -60,6 +63,7 @@ export const useCarouselControls = (
   return {
     setApi,
     activeIndex,
+    totalSlides,
     scrollTo: (i: number) => api?.scrollTo(i),
     handlePrev: () => api?.scrollPrev(),
     handleNext: () => api?.scrollNext(),

@@ -46,15 +46,15 @@ export default function Formats() {
   ];
 
   return (
-    <div className="py-15 bg-[url('/2ad7d91dd429f4d30784203412201bb60a92993c.webp')] rounded-[40px] bg-center bg-cover">
+    <div className="py-10 bg-[url('/2ad7d91dd429f4d30784203412201bb60a92993c.webp')] sm:rounded-[40px] bg-center bg-cover">
       <div className="wrapper-narrow">
-        <div className="flex flex-col gap-40 lg:gap-45">
+        <div className="flex flex-col gap-10 sm:gap-40">
           <div className="flex flex-wrap gap-2.5 justify-between">
             <h2 className="text-[32px] font-medium text-white">
               Форматы салонов
             </h2>
 
-            <div className="flex gap-2.5 backdrop-blur-2xl p-5 rounded-[20px] bg-[#FFFFFF1A] max-w-85">
+            <div className="flex gap-2.5 backdrop-blur-2xl p-5 rounded-[20px] bg-[#FFFFFF1A] sm:max-w-85">
               <GoodIcon className="text-white" width={40} />
               <p className="text-white font-circe text-[18px]">
                 70% выручки приносят продажи кухонь с чеком 200–400 тыс. руб.
@@ -62,11 +62,11 @@ export default function Formats() {
             </div>
           </div>
 
-          <div className="flex gap-5 overflow-x-auto pb-2">
+          <div className="flex gap-5 overflow-x-auto">
             {formats.map((format) => (
               <Format
                 key={format.name}
-                className="min-w-[460px]"
+                className="sm:min-w-[460px]"
                 imageProps={{
                   src: format.image,
                 }}
@@ -77,7 +77,7 @@ export default function Formats() {
                 investments={format.investments}
                 payback={format.payback}
                 endContent={
-                  <Button className="w-full">Получить бизнес план</Button>
+                  <Button className="w-fit">Получить бизнес план</Button>
                 }
               />
             ))}

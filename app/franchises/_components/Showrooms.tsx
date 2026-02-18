@@ -1,15 +1,15 @@
 import OurShowroom from "@/app/_components/OurShowrooms/OurShowroom";
+import TitledBlock from "@/app/_components/shared/TitledBlock";
 
 export default function Showrooms() {
   return (
-    <div className="flex flex-col gap-5">
-      <h2 className="text-[32px] font-medium">Наши салоны</h2>
+    <TitledBlock title="Наши салоны">
       <div className="flex gap-5 overflow-auto">
         {Array(4)
           .fill(null)
           .map((_, i) => (
             <OurShowroom
-              className="bg-white"
+              className="bg-white min-w-[340px]"
               key={i}
               imageProps={{
                 src: "/a13d8f678d77ec8fbfd19d11a22a2a53e97f15d3.webp",
@@ -21,6 +21,6 @@ export default function Showrooms() {
             />
           ))}
       </div>
-    </div>
+    </TitledBlock>
   );
 }

@@ -91,18 +91,21 @@ export default function Navigation() {
         </ul>
       ),
     },
-    "/about": {
+    "/about-company": {
       width: 315,
       value: (
         <ul className="flex flex-col gap-5">
           {[
-            { name: "О нас", href: "/about/us" },
-            { name: "Реализованные проекты", href: "/about/projects" },
-            { name: "Отзывы", href: "/about/reviews" },
-            { name: "Уникальные технологии", href: "/about/technologies" },
+            { name: "О нас", href: "/about-company/us" },
+            { name: "Реализованные проекты", href: "/about-company/projects" },
+            { name: "Отзывы", href: "/about-company/reviews" },
+            {
+              name: "Уникальные технологии",
+              href: "/about-company/unique-technologies",
+            },
             {
               name: "Советы по организации жилого пространства",
-              href: "/about/advice",
+              href: "/about-company/advice",
             },
           ].map((link) => (
             <Link key={link.href} href={link.href}>

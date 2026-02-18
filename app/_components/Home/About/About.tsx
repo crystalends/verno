@@ -5,6 +5,7 @@ import { useState } from "react";
 import { TMediaFile } from "@/app/_types/TMediaFile";
 import MediaPreview from "@/app/_components/shared/Media/MediaPreview";
 import { TInfo } from "@/app/_types/TInfo";
+import TitledBlock from "@/app/_components/shared/TitledBlock";
 
 const HEIGHT_CONFIG = [
   "lg:h-[220px]",
@@ -47,17 +48,16 @@ export default function About() {
   return (
     <div className="flex flex-col lg:flex-row gap-5 items-start">
       <div className="flex flex-col gap-15 lg:w-175 shrink-0">
-        <div className="flex flex-col gap-5">
-          <h2 className="font-medium text-[32px] leading-9.75">
-            VERNO — мебель, спроектированная не под стиль, а под человека: его
-            ритм, его чувства, его дом
-          </h2>
+        <TitledBlock
+          title="VERNO — мебель, спроектированная не под стиль, а под человека: его
+        ритм, его чувства, его дом"
+        >
           {descriptions.map((text, id) => (
             <p key={id} className="text-2xl leading-7.25 whitespace-pre-line">
               {text}
             </p>
           ))}
-        </div>
+        </TitledBlock>
         <div className="flex gap-5 flex-wrap lg:flex-nowrap">
           {info.map((item) => (
             <div

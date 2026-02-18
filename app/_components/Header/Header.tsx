@@ -11,6 +11,7 @@ import { useIsScrolled } from "@/app/_hooks/useIsScrolled";
 import Link from "next/link";
 import FavoriteButton from "@/app/_components/FavoriteButton";
 import clsx from "clsx";
+import NavigationMobile from "@/app/_components/Header/Navigation/NavigationMobile";
 
 type THeaderProps = {
   orderDesignProjectModalSlot: React.ReactNode;
@@ -60,7 +61,10 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
       className="fixed top-0 left-0 right-0 z-50 pb-2.5 transition-colors duration-300"
     >
       <div className="wrapper-narrow">
-        <motion.div layout className="flex items-start justify-between gap-5">
+        <motion.div
+          layout
+          className="flex items-center lg:items-start justify-between gap-5"
+        >
           <motion.div
             layout
             style={{ width: logoWidth, height: logoHeight }}
@@ -103,7 +107,12 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
               </div>
 
               <div className="flex items-center gap-1.25">
-                <Image src="/phone-call.svg" alt="Call" width={34} height={34} />
+                <Image
+                  src="/phone-call.svg"
+                  alt="Call"
+                  width={34}
+                  height={34}
+                />
                 <div className="flex flex-col items-end">
                   <span className="font-circe text-sm tracking-[1px]">
                     +7 (499) 841-84-10
@@ -128,33 +137,34 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
             <motion.div
               layout
               className={clsx(
-                "w-full flex justify-between items-center transition-all duration-300",
-                isScrolled && "max-w-290.25 gap-[118.5px]",
+                "w-full flex justify-between gap-5 items-center transition-all duration-300 max-w-297.5",
+                isScrolled && "max-w-290.25",
               )}
             >
-              <motion.div layout className="min-w-0 flex-1">
-                <Navigation />
-              </motion.div>
               <motion.div
                 layout
-                className="relative flex items-center justify-end overflow-hidden"
+                className={clsx("flex-1", isScrolled && "max-w-260.75")}
               >
+                <Navigation />
+              </motion.div>
+              {isScrolled && (
                 <motion.div
                   layout
-                  initial={false}
-                  animate={
-                    isScrolled ? { x: 0, opacity: 1 } : { x: 24, opacity: 0 }
-                  }
+                  initial={{ x: 36, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
                   transition={{ type: "spring", stiffness: 520, damping: 38 }}
-                  style={{ pointerEvents: isScrolled ? "auto" : "none" }}
                 >
                   <Link href="/favorites">
                     <FavoriteButton />
                   </Link>
                 </motion.div>
-              </motion.div>
+              )}
             </motion.div>
           </motion.div>
+
+          <div className="block lg:hidden">
+            <NavigationMobile />
+          </div>
         </motion.div>
       </div>
     </motion.header>

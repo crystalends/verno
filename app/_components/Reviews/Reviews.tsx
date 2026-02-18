@@ -1,10 +1,10 @@
-import Block from "@/app/_components/Home/Block";
+import TitledBlock from "@/app/_components/shared/TitledBlock";
 import Review from "@/app/_components/Reviews/Review";
 import { Button } from "@/app/_components/ui/button";
 
 export default function Reviews() {
   return (
-    <Block title="Отзывы">
+    <TitledBlock title="Отзывы">
       <>
         <div className="flex gap-5 overflow-auto">
           {Array(4)
@@ -40,6 +40,6 @@ export default function Reviews() {
           </Button>
         </div>
       </>
-    </Block>
+    </TitledBlock>
   );
 }

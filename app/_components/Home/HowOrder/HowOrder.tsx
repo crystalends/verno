@@ -1,4 +1,4 @@
-import Block from "@/app/_components/Home/Block";
+import TitledBlock from "@/app/_components/shared/TitledBlock";
 import HowOrderCard, {
   THowOrderCardProps,
 } from "@/app/_components/Home/HowOrder/HowOrderCard";
@@ -42,12 +42,12 @@ export default function HowOrder() {
   ];
 
   return (
-    <Block title="Как заказать?">
+    <TitledBlock title="Как заказать?">
       <div className="grid grid-cols-1 xl:grid-cols-4 sm:grid-cols-2 gap-2.5">
         {howToOrderCards.map((card, index) => (
           <HowOrderCard key={index} {...card} />
         ))}
       </div>
-    </Block>
+    </TitledBlock>
   );
 }

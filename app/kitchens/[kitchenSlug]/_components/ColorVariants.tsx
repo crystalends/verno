@@ -7,7 +7,7 @@ import {
   CarouselItem,
 } from "@/app/_components/ui/carousel";
 import { useCarouselControls } from "@/app/_hooks/useCarouselControls";
-import CarouselControlButton from "@/app/kitchens/[kitchenSlug]/_components/CarouselControlButton";
+import CarouselControlButton from "@/app/_components/Carousel/CarouselControlButton";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ColorVariants() {

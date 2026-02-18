@@ -4,7 +4,7 @@ import OrderDesignProjectModal from "@/app/_components/DesignProject/OrderDesign
 import FavoriteButton from "@/app/_components/FavoriteButton";
 import FavoriteIcon from "@/app/_components/icons/FavoriteIcon";
 import GoodIcon from "@/app/_components/icons/GoodIcon";
-import MightAlsoLike from "@/app/_components/MightAlsoLike";
+import TitledCarousel from "@/app/_components/TitledCarousel";
 import Description from "@/app/_components/Product/Description";
 import TechnologyCard from "@/app/_components/Product/TechnologyCard";
 import ProductMediaViewer from "@/app/_components/ProductMediaViewer";
@@ -138,7 +138,7 @@ export default function Kitchen() {
               className="bg-[#F0E2D7] md:p-15 p-6 rounded-md"
               imageWidth={660}
             />
-            <MightAlsoLike>
+            <TitledCarousel>
               {Array.from({ length: 18 }).map((_, index) => (
                 <CarouselItem key={index} className="basis-115 shrink-0 grow-0">
                   <ProductCard
@@ -179,7 +179,7 @@ export default function Kitchen() {
                   />
                 </CarouselItem>
               ))}
-            </MightAlsoLike>
+            </TitledCarousel>
           </div>
         </Block>
       </div>

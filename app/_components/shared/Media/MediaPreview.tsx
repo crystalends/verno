@@ -2,7 +2,7 @@ import { Button } from "@/app/_components/ui/button";
 import clsx from "clsx";
 import Image, { ImageProps } from "next/image";
 
-type TMediaPreviewProps = {
+export type TMediaPreviewProps = {
   isVideo: boolean;
   wrapperProps?: React.HTMLAttributes<HTMLDivElement>;
   playSlot?: React.ReactNode;

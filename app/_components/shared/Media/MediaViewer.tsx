@@ -16,7 +16,6 @@ import {
 } from "@/app/_components/ui/dialog";
 import { ChevronLeft, ChevronRight, XIcon } from "lucide-react";
 import { useCarouselControls } from "@/app/_hooks/useCarouselControls";
-import { useEffect } from "react";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { VariantProps } from "class-variance-authority";
 import MediaViewerSlideControl from "@/app/_components/shared/Media/MediaViewerSlideControl";
@@ -56,7 +55,25 @@ export default function MediaViewer({
   useControls = true,
   controls,
 }: TMediaViewerProps) {
-  const setExternalIndex = active?.setIndex;
+  const isControlled = !!active;
+
+  const [internalOpen, setInternalOpen] = React.useState(false);
+  const [internalIndex, setInternalIndex] = React.useState<number | null>(0);
+
+  const open = isControlled ? active!.index !== null : internalOpen;
+  const currentIndex = isControlled ? active!.index : internalIndex;
+
+  const setIndex = React.useCallback(
+    (idx: number | null) => {
+      if (isControlled) {
+        active!.setIndex(idx);
+      } else {
+        setInternalIndex(idx);
+        if (typeof idx === "number") setInternalOpen(true);
+      }
+    },
+    [isControlled, active],
+  );
 
   const {
     activeIndex,
@@ -66,21 +83,25 @@ export default function MediaViewer({
     handleNext,
     canScrollNext,
     canScrollPrev,
-  } = useCarouselControls(active?.index, (index) => setExternalIndex?.(index));
+  } = useCarouselControls(currentIndex ?? 0, (index) => setIndex(index));
 
-  const handleOpenChange = (open: boolean) => {
-    if (!open && setExternalIndex) setExternalIndex(null);
+  const handleOpenChange = (nextOpen: boolean) => {
+    if (!isControlled) {
+      setInternalOpen(nextOpen);
+      if (!nextOpen) setInternalIndex(null);
+      return;
+    }
+
+    if (!nextOpen) active!.setIndex(null);
   };
 
-  useEffect(() => {
-    if (typeof active?.index === "number") {
-      scrollTo(active.index);
-    }
-  }, [active?.index, scrollTo]);
+  React.useEffect(() => {
+    if (typeof currentIndex === "number") scrollTo(currentIndex);
+  }, [currentIndex, scrollTo]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (active?.index === null) return;
+      if (!open) return;
 
       if (e.key === "ArrowRight") {
         e.preventDefault();
@@ -88,17 +109,16 @@ export default function MediaViewer({
       } else if (e.key === "ArrowLeft") {
         e.preventDefault();
         if (canScrollPrev) handlePrev();
+      } else if (e.key === "Escape") {
+        handleOpenChange(false);
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
-
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [active?.index, canScrollNext, canScrollPrev, handleNext, handlePrev]);
+  }, [open, canScrollNext, canScrollPrev, handleNext, handlePrev]);
 
-  const handleClose = () => {
-    if (setExternalIndex) setExternalIndex(null);
-  };
+  const handleClose = () => handleOpenChange(false);
 
   const { className: controlsClassName, ...restControlsProps } =
     controls?.props || {};
@@ -113,7 +133,7 @@ export default function MediaViewer({
   } = controls || {};
 
   return (
-    <Dialog open={active?.index !== null} onOpenChange={handleOpenChange}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       {triggerSlot && <DialogTrigger asChild>{triggerSlot}</DialogTrigger>}
 
       <DialogPortal>
@@ -126,6 +146,7 @@ export default function MediaViewer({
             <XIcon className="size-6 text-white" />
             <span className="sr-only">Close</span>
           </DialogPrimitive.Close>
+
           <VisuallyHidden.Root>
             <DialogTitle>Media viewer</DialogTitle>
           </VisuallyHidden.Root>
@@ -168,6 +189,7 @@ export default function MediaViewer({
                             className="block w-auto max-h-[75vh] object-contain"
                           />
                         )}
+
                         {useControls && isActive && (
                           <div className="flex z-101 justify-between gap-2 absolute top-1/2 left-2.5 right-2.5 -translate-y-1/2">
                             <MediaViewerSlideControl

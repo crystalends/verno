@@ -13,12 +13,12 @@ export default function Advantage({ name, iconSlot, facts }: TAdvantageProps) {
         </div>
       )}
       <div className="flex flex-col gap-2.5">
-        <h4 className="text-2xl">{name}</h4>
+        <h4 className="text-2xl leading-7">{name}</h4>
         {facts.length > 0 && (
-          <ul className="flex flex-col gap-1.25 text-[16px] leading-[1.45] text-[#2B2B2B]">
+          <ul className="flex flex-col gap-1.25 text-[16px] leading-4.75 tracking-[-0.04em]">
             {facts.map((fact, i) => (
               <li key={i} className="flex gap-3">
-                <span className="text-[#6B6B6B] select-none">—</span>
+                <span className="text-[#656361] select-none">—</span>
                 <span>{fact}</span>
               </li>
             ))}
