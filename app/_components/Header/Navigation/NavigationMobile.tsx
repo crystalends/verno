@@ -1,3 +1,11 @@
+import CityButton from "@/app/_components/Header/CityButton";
+import CitySelector from "@/app/_components/Header/CitySelector";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/app/_components/ui/accordion";
 import { Button } from "@/app/_components/ui/button";
 import {
   Sheet,
@@ -35,6 +43,14 @@ export default function NavigationMobile() {
           <SheetClose asChild>
             <Link href="/favorites">Избранное</Link>
           </SheetClose>
+          <Accordion type="single" collapsible>
+            <AccordionItem value="cities">
+              <AccordionTrigger>Москва</AccordionTrigger>
+              <AccordionContent>
+                <CitySelector />
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </SheetContent>
     </Sheet>

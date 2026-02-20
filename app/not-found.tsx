@@ -7,7 +7,7 @@ export default function NotFoundPage() {
     <div className="w-full h-170 bg-center bg-cover bg-[url('/50d14816a6d236b1b60410aa70a6d20dd8c5f48e.webp')] flex flex-col justify-end py-5 md:py-17">
       <div className="wrapper-narrow">
         <>
-          <h1 className="text-[400px] select-none hidden md:block absolute top-55 text-primary font-bold">
+          <h1 className="text-[400px] select-none hidden md:block relative top-55 text-primary font-bold">
             404
           </h1>
           <div className="p-5 md:left-13.5 relative bg-[#918A861A] backdrop-blur-2xl md:max-w-152.5 w-full flex flex-col gap-5 rounded-[20px]">

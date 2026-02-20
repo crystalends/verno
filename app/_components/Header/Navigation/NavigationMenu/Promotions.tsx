@@ -14,7 +14,7 @@ export default function Promotions({
   return (
     <div className="flex gap-10" onMouseLeave={() => setOpenSales(false)}>
       <ul className="flex flex-col gap-5">
-        <Link href="/promotions">Акции</Link>
+        <Link href="/stocks">Акции</Link>
         <Link
           onMouseEnter={() => setOpenSales(true)}
           className={clsx(
@@ -26,7 +26,12 @@ export default function Promotions({
         >
           Распродажа
           {openSales && (
-            <Image src="/chevron-right.svg" width={14} height={14} alt="Распродажа" />
+            <Image
+              src="/chevron-right.svg"
+              width={14}
+              height={14}
+              alt="Распродажа"
+            />
           )}
         </Link>
       </ul>

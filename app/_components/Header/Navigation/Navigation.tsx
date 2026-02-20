@@ -38,12 +38,12 @@ export default function Navigation() {
             {Array(6)
               .fill(null)
               .map((_, i) => (
-                <Link key={i} href="/kitchens/dining">
+                <Link key={i} href="/kitchens?category=classic">
                   <NavigationMenuLinkItem
-                    name="Гостиные"
+                    name="Классика"
                     imageProps={{
                       src: "/99aed708759487e2d3376592182658955a632b8a.webp",
-                      alt: "Гостиные",
+                      alt: "Классика",
                     }}
                   />
                 </Link>
@@ -102,7 +102,7 @@ export default function Navigation() {
             },
             {
               name: "Советы по организации жилого пространства",
-              href: "/about-company/advice",
+              href: "/about-company/articles",
             },
           ].map((link) => (
             <Link key={link.href} href={link.href}>

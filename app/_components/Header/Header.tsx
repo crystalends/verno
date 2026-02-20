@@ -12,6 +12,16 @@ import Link from "next/link";
 import FavoriteButton from "@/app/_components/FavoriteButton";
 import clsx from "clsx";
 import NavigationMobile from "@/app/_components/Header/Navigation/NavigationMobile";
+import {
+  Popover,
+  PopoverContent,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverTrigger,
+} from "@/app/_components/ui/popover";
+import { VisuallyHidden } from "radix-ui";
+import CitySelector from "@/app/_components/Header/CitySelector";
+import FastSearch from "@/app/_components/Header/FastSearch";
 
 type THeaderProps = {
   orderDesignProjectModalSlot: React.ReactNode;
@@ -94,17 +104,31 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
               }}
               className="flex w-fit items-center gap-5 overflow-hidden"
             >
-              <div className="flex items-center gap-[3.5px]">
-                <Image
-                  src="/map-pin.svg"
-                  alt="Location"
-                  width={10}
-                  height={13}
-                />
-                <span className="font-circe font-light text-[#A09790]">
-                  Москва
-                </span>
-              </div>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <button className="flex items-center gap-[3.5px]">
+                    <Image
+                      src="/map-pin.svg"
+                      alt="Location"
+                      width={10}
+                      height={13}
+                    />
+                    <span className="font-circe font-light text-[#A09790]">
+                      Москва
+                    </span>
+                  </button>
+                </PopoverTrigger>
+
+                <PopoverContent align="start" className="sm:w-124.75">
+                  <PopoverHeader>
+                    <VisuallyHidden.Root>
+                      <PopoverTitle>Выбор города</PopoverTitle>
+                    </VisuallyHidden.Root>
+                  </PopoverHeader>
+
+                  <CitySelector />
+                </PopoverContent>
+              </Popover>
 
               <div className="flex items-center gap-1.25">
                 <Image
@@ -123,9 +147,7 @@ export default function Header({ orderDesignProjectModalSlot }: THeaderProps) {
                 </div>
               </div>
 
-              <Button size="icon" variant="ghost" className="size-6 min-h-fit">
-                <Image src="/search.svg" alt="Search" width={16} height={16} />
-              </Button>
+              <FastSearch />
 
               <Link href="/favorites">
                 <FavoriteButton />

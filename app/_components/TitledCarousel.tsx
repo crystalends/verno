@@ -10,7 +10,7 @@ import clsx from "clsx";
 type TTitledCarouselProps = {
   title?: string;
   children: React.ReactNode;
-  carouselContentProps?: HTMLAttributes<HTMLDivElement>;
+  carouselContentProps?: Omit<HTMLAttributes<HTMLDivElement>, "children">;
 } & Omit<HTMLAttributes<HTMLDivElement>, "title">;
 
 export default function TitledCarousel({
