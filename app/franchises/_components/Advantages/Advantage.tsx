@@ -1,3 +1,5 @@
+import { ListItem } from "@/app/_components/ui/list-item";
+
 export type TAdvantageProps = {
   name: string;
   facts: string[];
@@ -17,10 +19,7 @@ export default function Advantage({ name, iconSlot, facts }: TAdvantageProps) {
         {facts.length > 0 && (
           <ul className="flex flex-col gap-1.25 text-[16px] leading-4.75 tracking-[-0.04em]">
             {facts.map((fact, i) => (
-              <li key={i} className="flex gap-3">
-                <span className="text-[#656361] select-none">—</span>
-                <span>{fact}</span>
-              </li>
+              <ListItem key={i}>{fact}</ListItem>
             ))}
           </ul>
         )}

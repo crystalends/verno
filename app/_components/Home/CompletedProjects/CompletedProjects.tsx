@@ -47,6 +47,7 @@ export default function CompletedProjects() {
                     <CarouselItem className="basis-full md:basis-1/2" key={i}>
                       <CompletedProject
                         imageProps={{
+                          alt: "Лaйт Kвaдpo + Mиa",
                           src: "/e536e83e11e005a17b38c90a3c9ee27019bdc820.webp",
                         }}
                         date="июнь 2024"

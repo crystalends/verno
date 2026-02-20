@@ -10,7 +10,11 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/app/_components/ui/navigation-menu";
-import { navigationLinks, TNavigationLink } from "@/app/_data/navigationLinks";
+import {
+  forBuyersLinks,
+  navigationLinks,
+  TNavigationLink,
+} from "@/app/_data/navigationLinks";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -24,7 +28,6 @@ type TMenuItem = {
 export default function Navigation() {
   const [openSales, setOpenSales] = useState(false);
 
-  //не знаю в каком формате с бэка прилетит, поэтому раскидал пока не дробя на компоненты
   const menuContentMap: Record<string, TMenuItem["contentData"]> = {
     "/kitchens": {
       width: 582,
@@ -73,19 +76,13 @@ export default function Navigation() {
       width: openSales ? 383 : 214,
       value: <Promotions openSales={openSales} setOpenSales={setOpenSales} />,
     },
-    "/for-buyers": {
+    "/projects-3d": {
       width: 255,
       value: (
         <ul className="flex flex-col gap-5">
-          {[
-            { name: "3D проекты", href: "/3d-projects" },
-            { name: "Рассрочка", href: "/sales/credit" },
-            { name: "Доставка", href: "/delivery" },
-            { name: "Гарантия", href: "/sales/guarantee" },
-            { name: "Сборка и установка", href: "/sales/installation" },
-          ].map((link) => (
-            <Link key={link.href} href={link.href}>
-              {link.name}
+          {forBuyersLinks.map(({ href, name }) => (
+            <Link key={href} href={href}>
+              {name}
             </Link>
           ))}
         </ul>
@@ -96,7 +93,7 @@ export default function Navigation() {
       value: (
         <ul className="flex flex-col gap-5">
           {[
-            { name: "О нас", href: "/about-company/us" },
+            { name: "О нас", href: "/about-company" },
             { name: "Реализованные проекты", href: "/about-company/projects" },
             { name: "Отзывы", href: "/about-company/reviews" },
             {
@@ -117,7 +114,7 @@ export default function Navigation() {
     },
   };
 
-  const MENU_ITEMS: TMenuItem[] = navigationLinks.map((link) => ({
+  const menuItems: TMenuItem[] = navigationLinks.map((link) => ({
     ...link,
     contentData: menuContentMap[link.href as keyof typeof menuContentMap],
   }));
@@ -128,12 +125,12 @@ export default function Navigation() {
       viewport={false}
     >
       <NavigationMenuList className="justify-between gap-2 w-full">
-        {MENU_ITEMS.map(({ title, contentData, href }) => (
-          <NavigationMenuItem key={title}>
+        {menuItems.map(({ name, contentData, href }) => (
+          <NavigationMenuItem key={name}>
             {contentData ? (
               <>
                 <NavigationMenuTrigger>
-                  <Link href={href}>{title}</Link>
+                  <Link href={href}>{name}</Link>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent
                   style={{
@@ -145,7 +142,7 @@ export default function Navigation() {
               </>
             ) : (
               <NavigationMenuLink asChild className="font-circe">
-                {href ? <Link href={href}>{title}</Link> : title}
+                {href ? <Link href={href}>{name}</Link> : name}
               </NavigationMenuLink>
             )}
           </NavigationMenuItem>

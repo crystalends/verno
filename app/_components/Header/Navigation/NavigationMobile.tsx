@@ -27,9 +27,9 @@ export default function NavigationMobile() {
           </VisuallyHidden.Root>
         </SheetHeader>
         <div className="flex flex-col gap-5 px-5 overflow-auto">
-          {navigationLinks.map((link) => (
-            <SheetClose key={link.href} asChild>
-              <Link href={link.href}>{link.title}</Link>
+          {navigationLinks.map(({ name, href }) => (
+            <SheetClose key={href} asChild>
+              <Link href={href}>{name}</Link>
             </SheetClose>
           ))}
           <SheetClose asChild>

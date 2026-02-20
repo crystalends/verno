@@ -83,7 +83,7 @@ export default function MediaViewer({
     handleNext,
     canScrollNext,
     canScrollPrev,
-  } = useCarouselControls(currentIndex ?? 0, (index) => setIndex(index));
+  } = useCarouselControls(currentIndex, (index) => setIndex(index));
 
   const handleOpenChange = (nextOpen: boolean) => {
     if (!isControlled) {

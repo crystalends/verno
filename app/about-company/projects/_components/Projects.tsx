@@ -2,8 +2,8 @@ import CompletedProject from "@/app/_components/CompletedProject";
 import Pagination from "@/app/_components/Pagination";
 import Block from "@/app/_components/shared/Block";
 import BlockTitle from "@/app/_components/shared/BlockTitle";
-import TitledBlock from "@/app/_components/shared/TitledBlock";
 import Breadcrumbs, { TBreadcrumb } from "@/app/_components/ui/breadcrumbs";
+import Link from "next/link";
 
 export default function Projects() {
   const breadcrumbs: TBreadcrumb[] = [
@@ -23,9 +23,14 @@ export default function Projects() {
               {Array.from({ length: 9 }).map((_, index) => (
                 <CompletedProject
                   key={index}
-                  title="Лaйт Kвaдpo + Mиa"
+                  title={
+                    <Link href="/about-company/projects/lorem">
+                      Лaйт Kвaдpo + Mиa
+                    </Link>
+                  }
                   date="июнь 2024"
                   imageProps={{
+                    alt: "Лaйт Kвaдpo + Mиa",
                     src: "/dabe3973eff3be65c3e98813174e4bf645cc5ec8.webp",
                   }}
                 />

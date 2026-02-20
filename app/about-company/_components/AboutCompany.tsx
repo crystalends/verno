@@ -64,46 +64,44 @@ export default function AboutCompany() {
   ];
 
   return (
-    <div>
-      <div className="flex flex-col gap-2.5">
-        <div className="wrapper-narrow">
-          <Block>
-            <Breadcrumbs breadcrumbs={breadcrumbs} />
-          </Block>
-        </div>
-        <div className="flex flex-col gap-20">
-          <div className="w-full h-196.75 bg-center bg-cover bg-[url('/dabe3973eff3be65c3e98813174e4bf645cc5ec8.webp')] flex flex-col justify-end py-10">
-            <div className="wrapper-narrow">
-              <div className="p-5 md:p-10 bg-[#918A861A] backdrop-blur-2xl flex flex-col gap-10 w-full rounded-[20px]">
-                <h1 className="text-4xl w-full md:text-5xl font-medium text-white leading-15">
-                  O кoмпaнии «VERNO Kуxни»
-                  <br />
-                  Mocквa, пpoизвoдитeлe мeбeли
-                </h1>
-                <div className="flex gap-5 overflow-auto max-w-335">
-                  {facts.map((fact, index) => (
-                    <Fact
-                      className="min-w-[320px] bg-[#F9F4F1] sm:!min-h-[166px]"
-                      key={index}
-                      {...fact}
-                    />
-                  ))}
-                </div>
+    <div className="flex flex-col gap-2.5">
+      <div className="wrapper-narrow">
+        <Block>
+          <Breadcrumbs breadcrumbs={breadcrumbs} />
+        </Block>
+      </div>
+      <div className="flex flex-col gap-20">
+        <div className="w-full h-196.75 bg-center bg-cover bg-[url('/dabe3973eff3be65c3e98813174e4bf645cc5ec8.webp')] flex flex-col justify-end py-10">
+          <div className="wrapper-narrow">
+            <div className="p-5 md:p-10 bg-[#918A861A] backdrop-blur-2xl flex flex-col gap-10 w-full rounded-[20px]">
+              <h1 className="text-4xl w-full md:text-5xl font-medium text-white leading-15">
+                O кoмпaнии «VERNO Kуxни»
+                <br />
+                Mocквa, пpoизвoдитeлe мeбeли
+              </h1>
+              <div className="flex gap-5 overflow-auto max-w-335">
+                {facts.map((fact, index) => (
+                  <Fact
+                    className="min-w-[320px] bg-[#F9F4F1] sm:!min-h-[166px]"
+                    key={index}
+                    {...fact}
+                  />
+                ))}
               </div>
             </div>
           </div>
-          <div className="wrapper-narrow">
-            <div className="flex flex-col gap-20">
-              <Ideology />
-              <History />
-            </div>
+        </div>
+        <div className="wrapper-narrow">
+          <div className="flex flex-col gap-20">
+            <Ideology />
+            <History />
           </div>
-          <InStyle />
-          <div className="wrapper-narrow">
-            <div className="flex flex-col gap-20">
-              <Reliability />
-              <OurCertificaties />
-            </div>
+        </div>
+        <InStyle />
+        <div className="wrapper-narrow">
+          <div className="flex flex-col gap-20">
+            <Reliability />
+            <OurCertificaties />
           </div>
         </div>
       </div>

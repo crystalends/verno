@@ -1,13 +1,13 @@
+import { TNavigationLink } from "@/app/_data/navigationLinks";
 import { cva } from "class-variance-authority";
 import clsx from "clsx";
 import Link from "next/link";
 
 export type TCategoryProps = {
-  name: string;
-  href?: string;
   variant?: "default" | "outline";
   isActive?: boolean;
-} & React.HTMLAttributes<HTMLSpanElement>;
+} & React.HTMLAttributes<HTMLSpanElement> &
+  TNavigationLink;
 
 const categoryVariants = cva(
   "font-circe rounded-[40px] text-[18px] transition-all px-7.5 text-nowrap h-11 inline-flex items-center justify-center",

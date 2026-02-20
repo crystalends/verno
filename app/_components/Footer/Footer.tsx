@@ -89,13 +89,13 @@ export default function Footer() {
         <div className="flex pb-5 border-b border-accent items-center flex-wrap lg:flex-nowrap gap-15">
           <Image src="/logo.png" alt="Logo" width={114} height={34} />
           <div className="flex gap-5 flex-wrap lg:justify-between w-full">
-            {navigationLinks.map((link) => (
+            {navigationLinks.map(({ name, href }) => (
               <Link
                 className="text-primary font-medium text-[18px]"
-                key={link.href}
-                href={link.href}
+                key={href}
+                href={href}
               >
-                {link.title}
+                {name}
               </Link>
             ))}
           </div>

@@ -7,6 +7,7 @@ import {
 } from "@/app/_components/ui/dialog";
 import { Button } from "@/app/_components/ui/button";
 import { VisuallyHidden } from "radix-ui";
+import OrderPriceCalculation from "@/app/_components/PriceCalculation/OrderPriceCalculation";
 
 type TOrderPriceCalculationModalProps = {
   triggerSlot?: React.ReactNode;
@@ -23,7 +24,7 @@ export default function OrderPriceCalculationModal({
           <VisuallyHidden.Root>
             <DialogTitle>Рассчитать цену проекта</DialogTitle>
           </VisuallyHidden.Root>
-          <OrderPriceCalculationModal />
+          <OrderPriceCalculation />
         </DialogHeader>
       </DialogContent>
     </Dialog>

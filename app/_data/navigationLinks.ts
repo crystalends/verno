@@ -1,29 +1,37 @@
 export type TNavigationLink = {
-  title: string;
+  name: string;
   href: string;
 };
 
 export const navigationLinks = [
   {
-    title: "Кухни",
+    name: "Кухни",
     href: "/kitchens",
   },
   {
-    title: "Мебель для дома",
+    name: "Мебель для дома",
     href: "/furniture",
   },
   {
-    title: "Акции",
+    name: "Акции",
     href: "/stocks",
   },
   {
-    title: "Покупателю",
-    href: "/for-buyers",
+    name: "Покупателю",
+    href: "/projects-3d",
   },
-  { title: "Франшизы", href: "/franchises" },
+  { name: "Франшизы", href: "/franchises" },
   {
-    title: "О компании",
+    name: "О компании",
     href: "/about-company",
   },
-  { title: "Салоны", href: "/showrooms" },
+  { name: "Салоны", href: "/showrooms" },
+];
+
+export const forBuyersLinks: TNavigationLink[] = [
+  { name: "3D проекты", href: "/projects-3d" },
+  { name: "Рассрочка", href: "/credit" },
+  { name: "Доставка", href: "/delivery" },
+  { name: "Гарантия", href: "/guarantee" },
+  { name: "Сборка и установка", href: "/installation" },
 ];

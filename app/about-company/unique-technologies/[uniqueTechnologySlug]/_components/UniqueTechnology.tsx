@@ -12,6 +12,7 @@ import { Button } from "@/app/_components/ui/button";
 import { CarouselItem } from "@/app/_components/ui/carousel";
 import ImagesCarousel from "@/app/about-company/unique-technologies/[uniqueTechnologySlug]/_components/ImagesCarousel";
 import Link from "next/link";
+import BackLink from "@/app/_components/BackLink";
 
 export default function UniqueTechnology() {
   const breadcrumbs: TBreadcrumb[] = [
@@ -85,13 +86,7 @@ export default function UniqueTechnology() {
                   dolorem nulla odit omnis reiciendis possimus impedit autem
                   repellat dignissimos!
                 </p>
-                <Link
-                  href="/about-company/unique-technologies"
-                  className="flex gap-0.5 items-center text-[#656361] flex-wrap"
-                >
-                  <ArrowLeft />
-                  Вернуться назад
-                </Link>
+                <BackLink href="/about-company/unique-technologies" />
               </div>
               <div className="xl:max-w-145 w-full">
                 <ImagesCarousel />

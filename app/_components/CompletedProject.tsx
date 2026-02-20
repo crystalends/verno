@@ -1,9 +1,9 @@
 import Image, { ImageProps } from "next/image";
 
 type TCompletedProjectProps = {
-  title: string;
+  title: React.ReactNode;
   date?: string;
-  imageProps?: Omit<ImageProps, "width" | "height" | "alt" | "fill">;
+  imageProps?: Omit<ImageProps, "width" | "height" | "fill">;
 };
 
 export default function CompletedProject({
@@ -24,7 +24,7 @@ export default function CompletedProject({
           className="rounded-[20px] w-full h-90 object-cover"
           width={390}
           height={360}
-          alt={title}
+          alt={imageProps.alt}
         />
       )}
       <h4 className="font-medium text-[20px]">{title}</h4>
