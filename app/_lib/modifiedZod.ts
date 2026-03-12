@@ -1,5 +1,0 @@
-import { z } from "zod";
-
-z.config(z.locales.ru());
-
-export default z;

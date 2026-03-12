@@ -1,6 +1,5 @@
 import ArrowLeft from "@/app/_components/icons/ArrowLeft";
 import clsx from "clsx";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 

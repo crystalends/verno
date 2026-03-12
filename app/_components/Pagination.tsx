@@ -10,7 +10,7 @@ import {
 } from "@/app/_components/ui/pagination";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { ComponentProps } from "react";
+import { ComponentProps, Suspense } from "react";
 
 type TPagination = {
   page?: number;
@@ -22,7 +22,7 @@ type TPagination = {
 
 type TPaginationProps = ComponentProps<"nav"> & TPagination;
 
-export default function Pagination({
+function PaginationInner({
   page,
   total,
   limit,
@@ -155,5 +155,13 @@ export default function Pagination({
         </div>
       </PaginationContent>
     </ShadcnUIPagination>
+  );
+}
+
+export default function Pagination(props: TPaginationProps) {
+  return (
+    <Suspense fallback={null}>
+      <PaginationInner {...props} />
+    </Suspense>
   );
 }
